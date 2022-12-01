@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="UIComponents\ActivateApp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UIComponents\DirtectDebitTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UIComponents\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UIComponents\FunctionsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UIComponents\InfoTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UIComponents\LoginTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UIComponents\NewTransferTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UIComponents\OverviewTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UIComponents\StandingOrderTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UIComponents\StatementTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UIComponents\TransactionsLogTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

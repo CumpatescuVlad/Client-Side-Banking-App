@@ -1,0 +1,132 @@
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.exe
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.deps.json
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.runtimeconfig.json
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.dll
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.pdb
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.AssemblyReference.cache
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.Form1.resources
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.GenerateResource.cache
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.AssemblyInfoInputs.cache
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.AssemblyInfo.cs
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.CoreCompileInputs.cache
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.dll
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\refint\ClientSideApp.dll
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.pdb
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.genruntimeconfig.cache
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ref\ClientSideApp.dll
+C:\Users\Vlad\source\repos\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.LoginTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.exe
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.deps.json
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.runtimeconfig.json
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.pdb
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.AssemblyReference.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.Form1.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.LoginTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.GenerateResource.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.AssemblyInfoInputs.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.AssemblyInfo.cs
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.CoreCompileInputs.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\refint\ClientSideApp.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.pdb
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.genruntimeconfig.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ref\ClientSideApp.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.OverviewTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.TransactionsLogTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.FunctionsTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.InfoTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.StandingOrderTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.DirtectDebitTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.StatementTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.ShareAccountInfo.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.NewTransferTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.ActivateApp.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Azure.Core.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Azure.Identity.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\System.Memory.Data.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.CopyComplete
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.AssemblyReference.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.ActivateApp.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.DirtectDebitTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.Form1.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.FunctionsTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.InfoTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.LoginTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.NewTransferTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.OverviewTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.StandingOrderTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.StatementTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.TransactionsLogTab.resources
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.GenerateResource.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.AssemblyInfoInputs.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.AssemblyInfo.cs
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.CoreCompileInputs.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\refint\ClientSideApp.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.pdb
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.exe
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.deps.json
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.runtimeconfig.json
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\ClientSideApp.pdb
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Azure.Core.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Azure.Identity.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\System.Memory.Data.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.csproj.CopyComplete
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ClientSideApp.genruntimeconfig.cache
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\obj\Debug\net6.0-windows\ref\ClientSideApp.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\MailKit.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\MimeKit.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Newtonsoft.Json.Bson.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Syncfusion.Compression.Portable.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Syncfusion.DocIO.Portable.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Syncfusion.Licensing.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Syncfusion.OfficeChart.Portable.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Syncfusion.Compression.Base.dll
+E:\CODE REPOS\BankingApp\ClientSideApp\ClientSideApp\bin\Debug\net6.0-windows\Syncfusion.Pdf.Base.dll
