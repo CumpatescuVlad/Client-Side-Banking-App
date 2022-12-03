@@ -2,17 +2,14 @@
 using MailKit.Security;
 using MimeKit;
 using System.Net;
-using System.Text.Json;
 
-namespace Token.UnderTheHood
+namespace Token.BackEndComponents
 {
     public class Communication
     {
         #region Objects
         private readonly WebClient client = new();
-
         private readonly MimeMessage message = new();
-
         private readonly SmtpClient emailClient = new();
         #endregion
 
@@ -25,7 +22,7 @@ namespace Token.UnderTheHood
             Temp.CreateFile("SmsResponseCode.json", $"{reader.ReadToEnd()}");
 
         }
-       
+
 
         public void SendEmail(string reciverEmail, string customerPassword)
         {
@@ -51,8 +48,4 @@ namespace Token.UnderTheHood
 
     }
 
-    public partial class ResponseCodes
-    {
-        public int ResponseCode { get; set; }
-    }
 }

@@ -1,4 +1,4 @@
-﻿namespace Token.UnderTheHood
+﻿namespace Token.BackEndComponents
 {
     public static class Errors
     {

@@ -13,27 +13,7 @@ namespace ClientSideApp
         public InfoTab()
         {
             InitializeComponent();
-            exchangeLbl.Click += ExchangeLbl_Click;
 
-
-        }
-
-        private void ExchangeLbl_Click(object? sender, EventArgs e)
-        {
-            //Show Exchange Here
-
-            #region UIElements
-            label1.Hide();
-            label2.Hide();
-            label3.Hide();
-            label4.Hide();
-            accountOwnerContent.Hide();
-            accountTypeContent.Hide();
-            ibanContent.Hide();
-            AvailabbleAmountContent.Hide();
-            button1.Show();
-            shareAccountInfo.Hide();
-            #endregion
 
 
         }

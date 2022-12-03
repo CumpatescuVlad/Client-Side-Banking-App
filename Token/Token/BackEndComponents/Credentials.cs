@@ -1,14 +1,16 @@
-﻿namespace Token.UnderTheHood
+﻿using Newtonsoft.Json;
+
+namespace Token.BackEndComponents
 {
     public class Credentials
     {
-
         public bool isMatching(TextBox fullNameBox, TextBox passwordBox)
         {
+            CustomerData customerData = JsonConvert.DeserializeObject<CustomerData>(Temp.ReadFile("CustomerData.Json"));
 
-            bool nameIsMatching = fullNameBox.Text == Temp.ReadFile("CustomerFullName.txt");
+            bool nameIsMatching = fullNameBox.Text == customerData.CustomerFullName;
 
-            bool passwordIsmatching = passwordBox.Text == Temp.ReadFile("CustomerPassword.txt");
+            bool passwordIsmatching = passwordBox.Text == customerData.CustomerPassword;
 
             bool credentialsAreCorrect = nameIsMatching is true && passwordIsmatching is true;
 

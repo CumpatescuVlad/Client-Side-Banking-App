@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using ClientSideApp.src;
+using Microsoft.Data.SqlClient;
 
 namespace ClientSideApp
 {
@@ -6,28 +7,6 @@ namespace ClientSideApp
     {
         private readonly SqlConnection connection = new(DataSelection.ConnectionString);
         private readonly SqlConnection secondConnection = new(DataSelection.ConnectionString);
-
-        public string ReadCustomerAccounts(string customerName)
-        {
-            string accountData = null;
-
-            var readAccountCommand = new SqlCommand(DataSelection.SelectData("AccountName,Amount", "Accounts", "CustomerName", customerName), connection);
-
-            connection.Open();
-
-            var readAccountData = readAccountCommand.ExecuteReader();
-
-            while (readAccountData.Read())
-            {
-                accountData = $"Current Account:\n {readAccountData.GetValue(0)} availabble cash: {readAccountData.GetValue(1)}";
-
-
-            }
-            connection.Close();
-            readAccountCommand.Dispose();
-            readAccountData.Close();
-            return accountData;
-        }
 
         public string ReadCustomerTransactions(string customerName)
         {
@@ -80,8 +59,9 @@ namespace ClientSideApp
             secondConnection.Close();
             return customerName;
         }
-        public void ReadAccountData(string customerName)
+        public object ReadAccountData(string customerName , RichTextBox richTextBox)
         {
+            object accountData = null;  
             var readAccountDataCommand =
                 new SqlCommand(DataSelection.
                 SelectData("CustomerName,AccountIBAN,AccountNumber,Amount,AccountName", "Accounts", "CustomerName", customerName), connection);
@@ -92,7 +72,7 @@ namespace ClientSideApp
 
             while (reader.Read())
             {
-                object acccountData = new AccountData()
+                accountData = new AccountData()
                 {
                     CustomerName = reader.GetString(0),
                     AccountIBAN = reader.GetString(1),
@@ -102,12 +82,11 @@ namespace ClientSideApp
 
                 };
 
-                Temp.CreateFile("AccountData.json", JsonConversion.SearializeData(acccountData));
-
+                Temp.CreateFile("AccountData.json", JsonConversion.SearializeData(accountData));
+               
             }
             connection.Close();
-
-
+            return accountData;
         }
 
         public void ReadCompanyAccounts(ComboBox comboBox, ComboBox secondCombo)
@@ -129,25 +108,51 @@ namespace ClientSideApp
 
             secondConnection.Close();
         }
+        #region Commented
+        //public string ReadCustomerPIN(string customerName)
+        //{
+        //    string customerPIN = null;
 
-        public string ReadCustomerPIN(string PIN)
-        {
-            string customerPIN = null;
-            var readPIN = new SqlCommand(DataSelection.SelectData("CustomerAppPin", "Customers", "CustomerAppPin", PIN), connection);
+        //    var readPIN = new SqlCommand(DataSelection.SelectData("CustomerAppPin", "Customers", "CustomerFullName", customerName), connection);
 
-            connection.Open();
+        //    connection.Open();
 
-            var reader = readPIN.ExecuteReader();
+        //    var reader = readPIN.ExecuteReader();
 
-            while (reader.Read())
-            {
-                customerPIN = reader.GetString(0);
-            }
+        //    while (reader.Read())
+        //    {
+        //        customerPIN = reader.GetString(0);
+        //    }
 
-            connection.Close();
+        //    connection.Close();
 
-            return customerPIN;
-        }
+        //    return customerPIN;
+        //}
+
+        //public string ReadCustomerAccounts(string customerName)
+        //{
+        //    string accountData = null;
+
+        //    var readAccountCommand = new SqlCommand(DataSelection.SelectData("AccountName,Amount", "Accounts", "CustomerName", customerName), connection);
+
+        //    connection.Open();
+
+        //    var readAccountData = readAccountCommand.ExecuteReader();
+
+        //    while (readAccountData.Read())
+        //    {
+        //        accountData = $"Current Account:\n {readAccountData.GetValue(0)} availabble cash: {readAccountData.GetValue(1)}";
+
+
+        //    }
+        //    connection.Close();
+        //    readAccountCommand.Dispose();
+        //    readAccountData.Close();
+        //    return accountData;
+        //}
+        #endregion
+
+
 
     }
 }

@@ -12,11 +12,11 @@
     <PackageReference Include="Clickatell.Services" Version="1.0.0">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="MailKit" Version="3.4.2" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
+    <PackageReference Include="MailKit" Version="3.4.3" />
     <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,13 @@
-﻿namespace ClientSideApp
+﻿using ClientSideApp.src;
+using Newtonsoft.Json;
+
+namespace ClientSideApp
 {
     public partial class OverviewTab : UserControl
     {
         private readonly ExtractData customerData = new();
-
+        CustomerData _customerData = JsonConvert.DeserializeObject<CustomerData>(Temp.ReadTokenFiles("CustomerData.json"));
+        //AccountData accountData = JsonConvert.DeserializeObject<AccountData>(Temp.ReadFile("AccountData.json"));
         public OverviewTab()
         {
             InitializeComponent();
@@ -15,8 +19,9 @@
 
         private void OverviewTab_VisibleChanged(object? sender, EventArgs e)
         {
-            greetMessage.Text = $"Hello {Temp.ReadFile("CustomerFullName.txt")}";
-            richTextBox1.Text = customerData.ReadCustomerAccounts(Temp.ReadFile("CustomerFullName.txt"));
+            greetMessage.Text = $"Hello {_customerData.CustomerFullName}";
+            //richTextBox1.Text = $"Current Account:{customerData.ReadAccountData(_customerData.CustomerFullName)} availabble {accountData.Balance} RON";
+
         }
 
         private void newTransferBtn_Click(object sender, EventArgs e)
@@ -72,7 +77,7 @@
 
         private void button2_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = customerData.ReadCustomerAccounts(Temp.ReadFile("CustomerFullName.txt"));
+            //richTextBox1.Text = customerData.ReadCustomerAccounts(Temp.ReadFile("CustomerFullName.txt"));
         }
     }
 }

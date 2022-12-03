@@ -45,7 +45,6 @@
             this.StarThree = new System.Windows.Forms.Label();
             this.StarFour = new System.Windows.Forms.Label();
             this.overviewTab1 = new ClientSideApp.OverviewTab();
-            this.activateApp1 = new ClientSideApp.ActivateApp();
             this.searchingLabel = new System.Windows.Forms.Label();
             this.greeting = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -232,10 +231,7 @@
             // 
             // activateApp1
             // 
-            this.activateApp1.Location = new System.Drawing.Point(0, 0);
-            this.activateApp1.Name = "activateApp1";
-            this.activateApp1.Size = new System.Drawing.Size(445, 550);
-            this.activateApp1.TabIndex = 17;
+            
             // 
             // searchingLabel
             // 
@@ -279,7 +275,6 @@
             this.Controls.Add(this.MainMessage);
             this.Controls.Add(this.KeyOne);
             this.Controls.Add(this.overviewTab1);
-            this.Controls.Add(this.activateApp1);
             this.Name = "LoginTab";
             this.Size = new System.Drawing.Size(445, 643);
             this.Load += new System.EventHandler(this.LoginTab_Load);
@@ -306,7 +301,6 @@
         private Label StarThree;
         private Label StarFour;
         private OverviewTab overviewTab1;
-        private ActivateApp activateApp1;
         private TextBox textBox1;
         private Label searchingLabel;
         private Label greeting;

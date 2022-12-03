@@ -1,10 +1,14 @@
-﻿using Token.UnderTheHood;
+﻿using Newtonsoft.Json;
+using Token.BackEndComponents;
 
 namespace Token
 {
     public partial class AppAccountManagement : UserControl
     {
-        private readonly ChangeData data = new();
+        #region Objects
+        private readonly ChangeUserCredentials data = new();
+        private readonly ExtractData extract = new();
+        #endregion
 
         public AppAccountManagement()
         {
@@ -54,12 +58,10 @@ namespace Token
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Temp.DisposeFile("CustomerPassword.txt");
-            Temp.DisposeFile("CustomerPhoneNumber.txt");
-            Temp.DisposeFile("SmsResponseCode.json");
-            Temp.DisposeFile("CustomerEmail.txt");
+            CustomerData customerData = JsonConvert.DeserializeObject<CustomerData>(Temp.ReadFile("CustomerData.json"));
+            Temp.CreateFile("CustomerData.json", JsonConversion.SerializeData(extract.ReadUserData(customerData.CustomerFullName)));
+            Temp.CopyFile("CustomerData.json");
             Environment.Exit(0);
-
 
         }
     }

@@ -1,4 +1,4 @@
-namespace Token.UnderTheHood
+namespace Token.BackEndComponents
 {
     internal static class Program
     {
@@ -10,7 +10,7 @@ namespace Token.UnderTheHood
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            Directory.CreateDirectory(Temp.FolderPath);
+            Directory.CreateDirectory(Temp.TokenFolder);
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }

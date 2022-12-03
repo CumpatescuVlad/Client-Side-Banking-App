@@ -1,4 +1,4 @@
-﻿namespace Token.UnderTheHood
+﻿namespace Token.BackEndComponents
 {
     public static class Data
     {
@@ -15,7 +15,7 @@
 
         public static string ChangePIN(string customerName, string newPIN) => $"Update Customers set CustomerAppPin='{newPIN}' where CustomerFullName='{customerName}' ";
 
-        public static string ReadPassword(string customerName) => $"Select CustomerFullName ,CustomerPassword , CustomerPhoneNumber , CustomerEmail from Customers Where CustomerFullName='{customerName}'";
+        public static string ReadCustomerTable(string customerName) => $"Select CustomerFullName ,CustomerPassword , CustomerPhoneNumber , CustomerEmail ,CustomerAppPin from Customers Where CustomerFullName='{customerName}'";
 
         public static string ChangePassword(string customerName, string newPassword) => $"Update Customers set CustomerPassword='{newPassword}' where CustomerFullName='{customerName}' ";
 

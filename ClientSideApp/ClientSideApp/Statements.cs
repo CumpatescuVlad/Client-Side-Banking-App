@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Org.BouncyCastle.Asn1.X509.Qualified;
 using Syncfusion.DocIO;
 using Syncfusion.DocIO.DLS;
 using Syncfusion.Pdf;
@@ -60,14 +59,14 @@ namespace ClientSideApp
             footer.AppendText("Soldul disponibil al zilei bancare inscris pe extrasul de cont reflecta situatia sumelor inregistrate  in contul curent in momentul editarii extrasului de cont, in functie de obligatiile de plataale  titularului de cont initiate sau evidentiate pana la momentul editarii extrasului de cont.");
 
             statement.Save(wordOutputFile, FormatType.Docx);
-            
+
             statement.Close();
 
             wordOutputFile.Close();
 
             wordOutputFile.Dispose();
 
-           
+
         }
         public void GenerateCsvStatement(TextBox startingDate, TextBox endingDate)
         {
@@ -84,11 +83,11 @@ namespace ClientSideApp
             PdfGraphics graphic = page.Graphics;
             PdfBrush brush = new PdfSolidBrush(Color.Black);
             PdfFont normalFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 12);
-            var blodFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 14,PdfFontStyle.Bold);
-            
+            var blodFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 14, PdfFontStyle.Bold);
+
             #endregion
 
-            graphic.DrawString(PdfStatementTitle(startingDate, endingDate),blodFont,brush,new PointF(20, 20));
+            graphic.DrawString(PdfStatementTitle(startingDate, endingDate), blodFont, brush, new PointF(20, 20));
 
             graphic.DrawString(PdfStatementContent(), normalFont, brush, new PointF(20, 20));
 
@@ -110,7 +109,7 @@ namespace ClientSideApp
             content += "\n\n\n";
 
             content += $"NR. Cont:{accountData.AccountNumber}\nIBAN:{accountData.AccountIBAN}\nProduse Valuta:RON\nTitular:{accountData.CustomerName}";
-            
+
             content += $"\tCIC:{4563523}\tCNP/CUI:{3452353673}\nTip Produs:Cont curent {accountData.AccountName}\n\n\n";
 
             content += $"Total tranzactii finalizate pana la: {DateTime.Now}\n";
@@ -130,9 +129,9 @@ namespace ClientSideApp
             return content;
         }
 
-        public string PdfStatementTitle(string startingDate, string endingDate) =>$"EXTRAS DE CONT NR.{random.Next(1, 10)} din data de  {DateTime.Now} \n\t\t\t\t\t\t\tpe perioada: {startingDate} - {endingDate}\n";
+        public string PdfStatementTitle(string startingDate, string endingDate) => $"EXTRAS DE CONT NR.{random.Next(1, 10)} din data de  {DateTime.Now} \n\t\t\t\t\t\t\tpe perioada: {startingDate} - {endingDate}\n";
 
-       
+
 
 
 

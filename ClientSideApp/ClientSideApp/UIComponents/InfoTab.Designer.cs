@@ -37,7 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.AvailabbleAmountContent = new System.Windows.Forms.Label();
             this.shareAccountInfo = new System.Windows.Forms.Button();
-            this.exchangeLbl = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -132,16 +131,6 @@
             this.shareAccountInfo.UseVisualStyleBackColor = true;
             this.shareAccountInfo.Click += new System.EventHandler(this.shareAccountInfo_Click);
             // 
-            // exchangeLbl
-            // 
-            this.exchangeLbl.AutoSize = true;
-            this.exchangeLbl.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exchangeLbl.Location = new System.Drawing.Point(3, 14);
-            this.exchangeLbl.Name = "exchangeLbl";
-            this.exchangeLbl.Size = new System.Drawing.Size(93, 25);
-            this.exchangeLbl.TabIndex = 9;
-            this.exchangeLbl.Text = "Exchange";
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -158,7 +147,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.exchangeLbl);
             this.Controls.Add(this.shareAccountInfo);
             this.Controls.Add(this.AvailabbleAmountContent);
             this.Controls.Add(this.label4);
@@ -187,7 +175,6 @@
         private Label label4;
         private Label AvailabbleAmountContent;
         private Button shareAccountInfo;
-        private Label exchangeLbl;
         private Button button1;
     }
 }

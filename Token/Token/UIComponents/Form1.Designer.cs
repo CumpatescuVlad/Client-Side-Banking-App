@@ -44,6 +44,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 669);
+            this.ControlBox = false;
             this.Controls.Add(this.loginTab1);
             this.Name = "Form1";
             this.Text = "Form1";

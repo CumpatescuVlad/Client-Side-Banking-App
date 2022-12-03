@@ -1,10 +1,10 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
-namespace Token.UnderTheHood
+namespace Token.BackEndComponents
 {
     public class ExtractData
     {
-        private readonly SqlConnection connnection = new SqlConnection(Data.ConnectionString);
+        private readonly SqlConnection connnection = new(Data.ConnectionString);
 
         public bool isFirstInstall(string customerName)
         {
@@ -30,9 +30,11 @@ namespace Token.UnderTheHood
 
             return isFirstInstall;
         }
-        public void ReadPassword(string customerName)
+        public object ReadUserData(string customerName)
         {
-            var readPassword = new SqlCommand(Data.ReadPassword(customerName), connnection);
+            object customerData = null;
+
+            var readPassword = new SqlCommand(Data.ReadCustomerTable(customerName), connnection);
 
             connnection.Open();
 
@@ -40,17 +42,24 @@ namespace Token.UnderTheHood
 
             while (reader.Read())
             {
-                Temp.CreateFile("CustomerFullName.txt", $"{reader.GetValue(0)}");
-                Temp.CreateFile("CustomerPassword.txt", $"{reader.GetValue(1)}");
-                Temp.CreateFile("CustomerPhoneNumber.txt", $"{reader.GetValue(2)}");
-                Temp.CreateFile("CustomerEmail.txt", $"{reader.GetValue(3)}");
-               
+                customerData = new CustomerData()
+                {
+                    CustomerFullName = reader.GetString(0),
+                    CustomerPassword = reader.GetString(1),
+                    CustomerPhoneNumber = reader.GetString(2),
+                    CustomerEmail = reader.GetString(3),
+                    CustomerPIN =reader.GetString(4),
+
+                };
+
             }
 
             connnection.Close();
-
             reader.Close();
             readPassword.Dispose();
+
+            return customerData;
+
         }
     }
 }

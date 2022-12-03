@@ -1,3 +1,4 @@
+using ClientSideApp.UIComponents;
 using Syncfusion.Licensing;
 namespace ClientSideApp
 {
@@ -11,13 +12,27 @@ namespace ClientSideApp
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+
             ApplicationConfiguration.Initialize();
             SyncfusionLicenseProvider.RegisterLicense("NzcxNDQ0QDMyMzAyZTMzMmUzMFhjbTNwdnNTNGQ4TmlEV3A3SjZxSHNQaDhlSWlSNDBmRHBtZkJkSisvclk9");
             Directory.CreateDirectory(Temp.FolderPath);
             Temp.CreateFile("Count.txt", $"{0}");
             Temp.CreateFile("Readme.txt", @"This is the folder whre your credentials are stored , do not delete!! 
             Otherwise You Will be needed to activate the app again.");
-            Application.Run(new Form1());
+
+            if (File.Exists($@"{Temp.TokenFolder}\CustomerData.json") is false)
+            {
+                Application.Run(new AppActivation());
+
+                return;
+            }
+            else
+            {
+                Application.Run(new Form1());
+            }
+
         }
+
+
     }
 }
