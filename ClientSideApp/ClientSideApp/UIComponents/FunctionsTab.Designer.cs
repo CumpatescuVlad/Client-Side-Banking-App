@@ -84,9 +84,8 @@
             this.owner.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.owner.Location = new System.Drawing.Point(3, 394);
             this.owner.Name = "owner";
-            this.owner.Size = new System.Drawing.Size(78, 30);
+            this.owner.Size = new System.Drawing.Size(0, 30);
             this.owner.TabIndex = 5;
-            this.owner.Text = "Owner";
             // 
             // standingOrderTab1
             // 

@@ -1,4 +1,7 @@
-﻿namespace ClientSideApp
+﻿using ClientSideApp.src;
+using Newtonsoft.Json;
+
+namespace ClientSideApp
 {
     public partial class TransactionsLogTab : UserControl
     {
@@ -6,18 +9,21 @@
         public TransactionsLogTab()
         {
             InitializeComponent();
+            richTextBox1.MouseEnter += RichTextBox1_MouseEnter;
+        }
 
+        private void RichTextBox1_MouseEnter(object? sender, EventArgs e)
+        {
+            CustomerData customerData = JsonConvert.DeserializeObject<CustomerData>(Temp.ReadTokenFiles("CustomerData.json"));
+            if (String.IsNullOrEmpty(richTextBox1.Text))
+            {
+                richTextBox1.Text = "Searching Transactions";
+                richTextBox1.Text = extractdata.ReadCustomerTransactions(customerData.CustomerFullName);
+            }
         }
 
         private void TransactionsLogTab_Load(object sender, EventArgs e)
         {
-
-            if (this.Visible is true)
-            {
-                richTextBox1.Text = extractdata.ReadCustomerTransactions(Temp.ReadFile("CustomerFullName.txt"));
-
-            }
-
             #region UIComponenets
             transactionsBtn.BackColor = Color.White;
             infoBtn.BackColor = Color.WhiteSmoke;

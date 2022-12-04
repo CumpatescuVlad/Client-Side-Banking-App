@@ -1,39 +1,50 @@
-﻿using MailKit.Net.Smtp;
+﻿using ClientSideApp.src;
+using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.Data.SqlClient;
 using MimeKit;
+using Newtonsoft.Json;
 
 namespace ClientSideApp
 {
     public partial class InfoTab : UserControl
     {
+        CustomerData _customerData = JsonConvert.DeserializeObject<CustomerData>(Temp.ReadTokenFiles("CustomerData.json"));
         private readonly SqlConnection connection = new(DataSelection.ConnectionString);
         private readonly MimeMessage message = new();
         private readonly SmtpClient emailClient = new();
         public InfoTab()
         {
             InitializeComponent();
-
+            this.MouseEnter += InfoTab_MouseEnter;
 
 
         }
 
+        private void InfoTab_MouseEnter(object? sender, EventArgs e)
+        {
+            bool labelsAreEmpty = String.IsNullOrEmpty(accountTypeContent.Text) || String.IsNullOrEmpty(accountOwnerContent.Text) 
+                                  || String.IsNullOrEmpty(ibanContent.Text) || String.IsNullOrEmpty(AvailabbleAmountContent.Text);
+            if (labelsAreEmpty is true)
+            {
+                accountTypeContent.Text = "Current Account";
+
+                accountOwnerContent.Text = _customerData.CustomerFullName;
+
+                ReadAccountData(_customerData.CustomerFullName, ibanContent, AvailabbleAmountContent);
+            }
+           
+        }
+
         private void InfoTab_Load(object sender, EventArgs e)
         {
-
-            accountTypeContent.Text = "Current Account";
-
-            accountOwnerContent.Text = Temp.ReadFile("CustomerFullName.txt");
-
-            ReadAccountData(Temp.ReadFile("CustomerFullName.txt"), ibanContent, AvailabbleAmountContent);
-
             button1.Hide();
 
         }
 
         private void shareAccountInfo_Click(object sender, EventArgs e)
         {
-            SendEmail(Temp.ReadFile("CustomerFullName.txt"));
+            SendEmail(_customerData.CustomerEmail);
 
             MessageBox.Show("Info Shared!!");
 
@@ -79,7 +90,7 @@ namespace ClientSideApp
         {
             message.From.Add(new MailboxAddress("BANK-APP", "cumpatescuvlad@yahoo.com"));
 
-            message.To.Add(MailboxAddress.Parse(ReadCustomerEmail(customerName)));
+            message.To.Add(MailboxAddress.Parse(customerName));
 
             message.Subject = "Account Info";
 
@@ -96,26 +107,6 @@ namespace ClientSideApp
 
 
         }
-        private string ReadCustomerEmail(string customerName)
-        {
-            string customerEmail = null;
-
-            var readEmailCommand = new SqlCommand(DataSelection.SelectData("CustomerEmail", "Customers", "CustomerFullName", customerName), connection);
-
-            connection.Open();
-
-            var reader = readEmailCommand.ExecuteReader();
-
-            while (reader.Read())
-            {
-                customerEmail = reader.GetString(0);
-            }
-
-            connection.Close();
-            readEmailCommand.Dispose();
-            reader.Close();
-
-            return customerEmail;
-        }
+       
     }
 }

@@ -1,22 +1,37 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using ClientSideApp.src;
+using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
 
 namespace ClientSideApp
 {
     public partial class FunctionsTab : UserControl
     {
-        private readonly SqlConnection connection = new SqlConnection(DataSelection.ConnectionString);
+        CustomerData _customerData = JsonConvert.DeserializeObject<CustomerData>(Temp.ReadTokenFiles("CustomerData.json"));
+        private readonly SqlConnection connection = new(DataSelection.ConnectionString);
+        private readonly ExtractData data = new();
         public FunctionsTab()
         {
             InitializeComponent();
             directDebit.Click += DirectDebit_Click;
             standingOrders.Click += StandingOrders_Click;
             statementlabel.Click += Statementlabel_Click;
+            this.MouseEnter += FunctionsTab_MouseEnter;
 
-
+        }
+        
+        private void FunctionsTab_MouseEnter(object? sender, EventArgs e)
+        {
+            
+            if (String.IsNullOrEmpty(owner.Text))
+            {
+                owner.Text = data.ReadCreditCard(_customerData.CustomerFullName);
+            }
+           
         }
 
         private void Statementlabel_Click(object? sender, EventArgs e)
         {
+            data.ReadAccountData(_customerData.CustomerFullName);
             statementTab1.Show();
             statementTab1.BringToFront();
 
@@ -36,9 +51,6 @@ namespace ClientSideApp
 
         private void FunctionsTab_Load(object sender, EventArgs e)
         {
-
-            owner.Text = ReadCreditCard(Temp.ReadFile("CustomerFullName.txt"));
-
             standingOrderTab1.Hide();
             dirtectDebitTab1.Hide();
             statementTab1.Hide();
@@ -50,23 +62,6 @@ namespace ClientSideApp
 
         }
 
-        private string ReadCreditCard(string customerName)
-        {
-            string creditCardData = null;
-
-            var readCreditCardDataCommand = new SqlCommand(DataSelection.SelectData("CustomerName,CreditCardNumber", "CreditCard", "CustomerName", customerName), connection);
-
-            connection.Open();
-
-            var reader = readCreditCardDataCommand.ExecuteReader();
-
-            while (reader.Read())
-            {
-                creditCardData = $"{reader.GetValue(0)} \n{reader.GetValue(1)}";
-            }
-            connection.Close();
-
-            return creditCardData;
-        }
+        
     }
 }

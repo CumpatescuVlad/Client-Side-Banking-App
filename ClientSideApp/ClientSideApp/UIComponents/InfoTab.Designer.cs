@@ -56,9 +56,8 @@
             this.accountTypeContent.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.accountTypeContent.Location = new System.Drawing.Point(130, 100);
             this.accountTypeContent.Name = "accountTypeContent";
-            this.accountTypeContent.Size = new System.Drawing.Size(76, 25);
+            this.accountTypeContent.Size = new System.Drawing.Size(0, 25);
             this.accountTypeContent.TabIndex = 1;
-            this.accountTypeContent.Text = "content";
             // 
             // label2
             // 
@@ -76,9 +75,8 @@
             this.accountOwnerContent.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.accountOwnerContent.Location = new System.Drawing.Point(127, 173);
             this.accountOwnerContent.Name = "accountOwnerContent";
-            this.accountOwnerContent.Size = new System.Drawing.Size(132, 25);
+            this.accountOwnerContent.Size = new System.Drawing.Size(0, 25);
             this.accountOwnerContent.TabIndex = 3;
-            this.accountOwnerContent.Text = "ownerContent";
             // 
             // label3
             // 
@@ -96,9 +94,8 @@
             this.ibanContent.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ibanContent.Location = new System.Drawing.Point(127, 245);
             this.ibanContent.Name = "ibanContent";
-            this.ibanContent.Size = new System.Drawing.Size(121, 25);
+            this.ibanContent.Size = new System.Drawing.Size(0, 25);
             this.ibanContent.TabIndex = 5;
-            this.ibanContent.Text = "IBANContent";
             // 
             // label4
             // 
@@ -116,9 +113,8 @@
             this.AvailabbleAmountContent.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AvailabbleAmountContent.Location = new System.Drawing.Point(130, 346);
             this.AvailabbleAmountContent.Name = "AvailabbleAmountContent";
-            this.AvailabbleAmountContent.Size = new System.Drawing.Size(144, 25);
+            this.AvailabbleAmountContent.Size = new System.Drawing.Size(0, 25);
             this.AvailabbleAmountContent.TabIndex = 7;
-            this.AvailabbleAmountContent.Text = "amountContent";
             // 
             // shareAccountInfo
             // 

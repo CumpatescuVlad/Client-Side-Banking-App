@@ -110,7 +110,7 @@ namespace ClientSideApp
 
         private void overviewTab1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void LoginTab_Load(object sender, EventArgs e)

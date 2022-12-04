@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ClientSideApp.src;
+using Newtonsoft.Json;
 using Syncfusion.DocIO;
 using Syncfusion.DocIO.DLS;
 using Syncfusion.Pdf;
@@ -11,12 +12,15 @@ namespace ClientSideApp
     {
         private readonly Random random = new();
         private readonly ExtractData data = new();
-        private readonly AccountData accountData = JsonConvert.DeserializeObject<AccountData>(Temp.ReadFile("AccountData.json"));
-        private readonly FileStream wordOutputFile = new(Path.GetFullPath(@$"{Temp.FolderPath}\OriginalStatement.docx"), FileMode.Create, FileAccess.ReadWrite);
-        private readonly FileStream pdfOutputFile = new(Path.GetFullPath(@$"{Temp.FolderPath}\OriginalStatement.pdf"), FileMode.Create, FileAccess.ReadWrite);
+        private readonly CustomerData customerData = JsonConvert.DeserializeObject<CustomerData>(Temp.ReadTokenFiles("CustomerData.json"));
+
 
         public void GenerateWordStatement(TextBox startingDate, TextBox endingDate)
         {
+            
+            FileStream wordOutputFile = new(Path.GetFullPath(@$"{Temp.FolderPath}\OriginalStatement.docx"), FileMode.Create, FileAccess.ReadWrite);
+            AccountData accountData = JsonConvert.DeserializeObject<AccountData>(Temp.ReadFile("AccountData.json"));
+
             #region ParagraphSettings
             WordDocument statement = new WordDocument();
             IWSection content = statement.AddSection();
@@ -42,13 +46,13 @@ namespace ClientSideApp
 
             leftColum.ParagraphFormat.HorizontalAlignment = HorizontalAlignment.Left;
 
-            leftColum.AppendText($"NR. Cont:{accountData.AccountNumber}\nIBAN:{accountData.AccountIBAN}\nProduse Valuta:RON\nTitular:{accountData.CustomerName}");
+            leftColum.AppendText($"NR. Cont:{accountData.AccountNumber}\nIBAN:{accountData.AccountIBAN}\nProduse Valuta:RON\nTitular:{customerData.CustomerFullName}");
 
             leftColum.AppendText($"\tCIC:{4563523}\tCNP/CUI:{3452353673}\nTip Produs:Cont curent {accountData.AccountName}\n");
 
             leftColum.AppendText($"Total tranzactii finalizate pana la {DateTime.Now}\n\n\n");
 
-            leftColum.AppendText(data.ReadCustomerTransactions(accountData.CustomerName));
+            leftColum.AppendText(data.ReadCustomerTransactions(customerData.CustomerFullName));
 
             leftColum.AppendText($"Sold Disponibil  la :\t\t\t{DateTime.Now}\t\t\t{accountData.Balance} LEI\n");
 
@@ -71,12 +75,14 @@ namespace ClientSideApp
         public void GenerateCsvStatement(TextBox startingDate, TextBox endingDate)
         {
             Temp.CreateFile("Statement.csv",
-                $"Valabil{startingDate} -- {endingDate} \n\n\n{data.ReadCustomerTransactions(accountData.CustomerName)}");
+                $"Valabil{startingDate} -- {endingDate} \n\n\n{data.ReadCustomerTransactions(customerData.CustomerFullName)}");
 
         }
 
         public void GeneratePdfStatement(string startingDate, string endingDate)
         {
+            FileStream pdfOutputFile = new(Path.GetFullPath(@$"{Temp.FolderPath}\OriginalStatement.pdf"), FileMode.Create, FileAccess.ReadWrite);
+
             #region Template Creation
             PdfDocument statment = new PdfDocument();
             PdfPage page = statment.Pages.Add();
@@ -104,17 +110,19 @@ namespace ClientSideApp
 
         public string PdfStatementContent()
         {
+            AccountData accountData = JsonConvert.DeserializeObject<AccountData>(Temp.ReadFile("AccountData.json"));
+
             string content = "\n\n\n";
 
             content += "\n\n\n";
 
-            content += $"NR. Cont:{accountData.AccountNumber}\nIBAN:{accountData.AccountIBAN}\nProduse Valuta:RON\nTitular:{accountData.CustomerName}";
+            content += $"NR. Cont:{accountData.AccountNumber}\nIBAN:{accountData.AccountIBAN}\nProduse Valuta:RON\nTitular:{customerData.CustomerFullName}";
 
             content += $"\tCIC:{4563523}\tCNP/CUI:{3452353673}\nTip Produs:Cont curent {accountData.AccountName}\n\n\n";
 
             content += $"Total tranzactii finalizate pana la: {DateTime.Now}\n";
 
-            content += data.ReadCustomerTransactions(accountData.CustomerName);
+            content += data.ReadCustomerTransactions(customerData.CustomerFullName);
 
             content += $"\n\n\nSold Disponibil  la :\t\t\t{DateTime.Now}\t\t\t{accountData.Balance} LEI\n";
 
@@ -130,13 +138,6 @@ namespace ClientSideApp
         }
 
         public string PdfStatementTitle(string startingDate, string endingDate) => $"EXTRAS DE CONT NR.{random.Next(1, 10)} din data de  {DateTime.Now} \n\t\t\t\t\t\t\tpe perioada: {startingDate} - {endingDate}\n";
-
-
-
-
-
-
-
 
 
     }

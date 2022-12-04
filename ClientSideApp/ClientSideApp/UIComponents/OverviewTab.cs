@@ -7,22 +7,29 @@ namespace ClientSideApp
     {
         private readonly ExtractData customerData = new();
         CustomerData _customerData = JsonConvert.DeserializeObject<CustomerData>(Temp.ReadTokenFiles("CustomerData.json"));
-        //AccountData accountData = JsonConvert.DeserializeObject<AccountData>(Temp.ReadFile("AccountData.json"));
+       
         public OverviewTab()
         {
             InitializeComponent();
             richTextBox1.Click += RichTextBox1_Click;
             richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
-            this.VisibleChanged += OverviewTab_VisibleChanged;
+            this.MouseEnter += OverviewTab_MouseEnter;
 
         }
-
-        private void OverviewTab_VisibleChanged(object? sender, EventArgs e)
+        
+        private void OverviewTab_MouseEnter(object? sender, EventArgs e)
         {
-            greetMessage.Text = $"Hello {_customerData.CustomerFullName}";
-            //richTextBox1.Text = $"Current Account:{customerData.ReadAccountData(_customerData.CustomerFullName)} availabble {accountData.Balance} RON";
+            if (String.IsNullOrEmpty(richTextBox1.Text))
+            {
+                #region ReadAccountData
+                greetMessage.Text = $"Hello {_customerData.CustomerFullName}";
+                richTextBox1.Text = customerData.ReadAccountData(_customerData.CustomerFullName);
+                #endregion
 
+            }
+            
         }
+
 
         private void newTransferBtn_Click(object sender, EventArgs e)
         {
@@ -51,12 +58,11 @@ namespace ClientSideApp
 
         private void OverviewTab_Load(object sender, EventArgs e)
         {
-
-
             #region UIElements
             transactionsLogTab1.Hide();
             button1.Hide();
             newTransferTab1.Hide();
+            button2.Hide();
             #endregion
 
         }
@@ -71,13 +77,14 @@ namespace ClientSideApp
             this.Show();
             this.BringToFront();
             button1.Hide();
+            button2.Show();
             #endregion
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //richTextBox1.Text = customerData.ReadCustomerAccounts(Temp.ReadFile("CustomerFullName.txt"));
+            richTextBox1.Text = customerData.ReadAccountData(_customerData.CustomerFullName);
         }
     }
 }

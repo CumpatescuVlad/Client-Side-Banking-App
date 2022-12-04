@@ -43,7 +43,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(440, 539);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "You Re3cived\nYou Withdraw Here";
+            this.richTextBox1.Text = "";
             // 
             // infoBtn
             // 
