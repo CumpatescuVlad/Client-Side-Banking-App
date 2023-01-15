@@ -32,27 +32,27 @@ namespace Token.BackEndComponents
         }
         public object ReadUserData(string customerName)
         {
-            object customerData = null;
+            //object customerData = null;
 
-            var readPassword = new SqlCommand(Data.ReadCustomerTable(customerName), connnection);
+            //var readPassword = new SqlCommand(Data.ReadCustomerTable(customerName), connnection);
 
-            connnection.Open();
+            //connnection.Open();
 
-            var reader = readPassword.ExecuteReader();
+            //var reader = readPassword.ExecuteReader();
 
-            while (reader.Read())
-            {
-                customerData = new CustomerData()
-                {
-                    CustomerFullName = reader.GetString(0),
-                    CustomerPassword = reader.GetString(1),
-                    CustomerPhoneNumber = reader.GetString(2),
-                    CustomerEmail = reader.GetString(3),
-                    CustomerPIN =reader.GetString(4),
+            //while (reader.Read())
+            //{
+            //    customerData = new CustomerData()
+            //    {
+            //        //CustomerFullName = reader.GetString(0),
+            //        //CustomerPassword = reader.GetString(1),
+            //        //CustomerPhoneNumber = reader.GetString(2),
+            //        //CustomerEmail = reader.GetString(3),
+            //        //CustomerPIN =reader.GetString(4),
 
-                };
+            //    };
 
-            }
+            //}
 
             connnection.Close();
             reader.Close();

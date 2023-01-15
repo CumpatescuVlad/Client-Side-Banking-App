@@ -3,9 +3,10 @@
     public static class Data
     {
         private static string _connectionString =
-           @"Server=tcp:vlad07072003.database.windows.net,1433;Initial Catalog=BankApp;Persist Security Info=False;
-            User ID=Vlad;Password=Apicultor__69;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;
-            Connection Timeout=30;";
+           @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Bank;
+           UserID =Vlad;Password =Apicultor__69;Integrated Security=True;
+           Connect Timeout=30;Encrypt=False; TrustServerCertificate=False;
+           ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public static string ConnectionString { get => _connectionString; }
 
@@ -15,7 +16,7 @@
 
         public static string ChangePIN(string customerName, string newPIN) => $"Update Customers set CustomerAppPin='{newPIN}' where CustomerFullName='{customerName}' ";
 
-        public static string ReadCustomerTable(string customerName) => $"Select CustomerFullName ,CustomerPassword , CustomerPhoneNumber , CustomerEmail ,CustomerAppPin from Customers Where CustomerFullName='{customerName}'";
+       // public static string ReadCustomerTable(string customerName) => $"Select CustomerFullName ,CustomerPassword , CustomerPhoneNumber , CustomerEmail ,CustomerAppPin from Customers Where CustomerFullName='{customerName}'";
 
         public static string ChangePassword(string customerName, string newPassword) => $"Update Customers set CustomerPassword='{newPassword}' where CustomerFullName='{customerName}' ";
 
