@@ -2,6 +2,8 @@
 using DataApi.DTOs;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Options;
+using DataApi.Modeles;
+using System.Net;
 
 namespace DataApi.src
 {
@@ -42,6 +44,45 @@ namespace DataApi.src
 
             return userData;
 
+        }
+
+        public HttpStatusCode UpdateUserCredentials(CredentialsModel credentials)
+        {
+            var connection = new SqlConnection(_config.ConnectionString);
+            var responseCode = HttpStatusCode.NotFound;
+
+            connection.Open();
+
+            if (credentials.Password is null)
+            {
+                var updatePin = new SqlCommand(QuerryStrings.UpdateCredentials(credentials), connection);
+
+                var adapter = new SqlDataAdapter();
+
+                adapter.UpdateCommand = updatePin;
+
+                adapter.UpdateCommand.ExecuteNonQuery();
+
+                responseCode = HttpStatusCode.OK;
+
+            }
+
+            else if (credentials.Pin is null)
+            {
+                var updatePassword = new SqlCommand(QuerryStrings.UpdateCredentials(credentials), connection);
+
+                var adapter = new SqlDataAdapter();
+
+                adapter.UpdateCommand = updatePassword;
+
+                adapter.UpdateCommand.ExecuteNonQuery();
+
+                responseCode = HttpStatusCode.OK;
+            }
+
+            connection.Close();
+
+            return responseCode;
         }
 
     }

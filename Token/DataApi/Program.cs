@@ -15,6 +15,7 @@ builder.Services.AddScoped<ICredentials, Credentials>();
 builder.Services.AddScoped<IAuthentificationService, AuthentificationService>();
 builder.Services.AddScoped<ICommunicationService, CommunicationService>();  
 builder.Services.AddScoped<IActivationService, ActivationService>();
+builder.Services.AddScoped<ICredentialsUpdateService, CredentialsUpdateService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

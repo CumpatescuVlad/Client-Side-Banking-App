@@ -26,7 +26,7 @@ namespace DataApi.Controllers
             {
                 return Ok();
             }
-            else if(emailModel == null) 
+            else if(!ModelState.IsValid) 
             {
                 return BadRequest();
             }
