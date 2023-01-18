@@ -1,6 +1,4 @@
-﻿using DataApi.Modeles;
-using DataApi.Services;
-using Microsoft.AspNetCore.Http;
+﻿using DataApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DataApi.Controllers
@@ -9,7 +7,7 @@ namespace DataApi.Controllers
     [ApiController]
     public class AuthentificationController : ControllerBase
     {
-        private IAuthentificationService _authentification;
+        private readonly IAuthentificationService _authentification;
 
         public AuthentificationController(IAuthentificationService authentification)
         {
@@ -20,8 +18,13 @@ namespace DataApi.Controllers
 
         [Route("api/Login/{customerName}/{password}")]
 
-        public IActionResult Login(string customerName,string password)
+        public IActionResult Login(string customerName, string password)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             if (_authentification.LoginSuccesfully(customerName, password))
             {
                 return Content(_authentification.ReturnUserData(customerName));

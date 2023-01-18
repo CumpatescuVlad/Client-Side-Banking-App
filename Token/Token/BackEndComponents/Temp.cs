@@ -10,7 +10,7 @@
         public static void CreateFile(string file, string content) => File.WriteAllText($@"{FolderPath}\{file}", content);
         public static string ReadFile(string file) => File.ReadAllText($@"{FolderPath}\{file}");
         public static void DisposeFile(string file) => File.Delete($@"{FolderPath}\{file}");
-        public static void CopyFile(string file) => File.Copy($@"{FolderPath}\{file}", $@"{TokenFolder}\CustomerData.json",true);
+        public static void CopyFile(string file) => File.Copy($@"{FolderPath}\{file}", $@"{TokenFolder}\CustomerData.json", true);
 
     }
 }

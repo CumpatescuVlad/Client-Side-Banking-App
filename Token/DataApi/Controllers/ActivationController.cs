@@ -1,19 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using DataApi.Modeles;
 using DataApi.Services;
-using DataApi.Modeles;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DataApi.Controllers
 {
-    
+
     [ApiController]
     public class ActivationController : ControllerBase
     {
-       private readonly IActivationService _activationService;
+        private readonly IActivationService _activationService;
 
         public ActivationController(IActivationService activationService)
         {
-            _activationService= activationService;
+            _activationService = activationService;
         }
 
         [HttpPost]
@@ -22,15 +21,36 @@ namespace DataApi.Controllers
 
         public IActionResult EmailActivation(EmailModel emailModel)
         {
-            if (_activationService.EmailSentSuccesfully(emailModel))
-            {
-                return Ok();
-            }
-            else if(!ModelState.IsValid) 
+            if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
+            if (_activationService.EmailSentSuccesfully(emailModel))
+            {
+                return Ok();
+            }
+           
+
+            return NotFound();
+        }
+
+        [HttpPost]
+
+        [Route("api/SmsActivation")]
+
+        public IActionResult SmsActivation(SmsModel smsModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            if (_activationService.SmsSentSuccesfully(smsModel))
+            {
+                return Ok();
+            }
+           
             return NotFound();
         }
     }

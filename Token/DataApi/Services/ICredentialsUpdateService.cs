@@ -1,11 +1,10 @@
-﻿using DataApi.Modeles;
-using System.Net;
+﻿using System.Net;
 
 namespace DataApi.Services
 {
     public interface ICredentialsUpdateService
     {
-        HttpStatusCode ChangePassword(CredentialsModel credentials);
-        HttpStatusCode ChangePin(CredentialsModel credentials);
+        HttpStatusCode ChangePassword(string userName, string password, string pin);
+        HttpStatusCode ChangePin(string userName, string? password, string? pin);
     }
 }

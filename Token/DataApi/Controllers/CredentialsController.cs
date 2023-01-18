@@ -1,13 +1,11 @@
 ﻿using DataApi.Modeles;
 using DataApi.Services;
-using DataApi.src;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
 namespace DataApi.Controllers
 {
-    
+
     [ApiController]
     public class CredentialsController : ControllerBase
     {
@@ -20,19 +18,24 @@ namespace DataApi.Controllers
 
         [HttpPut]
 
-        [Route("api/ChangeUserPin")]
+        [Route("api/ChangeUserCredentials")]
 
-        public IActionResult Pin(CredentialsModel credentials)
+        public IActionResult Credentials(CredentialsModel credentials)
         {
-            if (_credentialsUpdateService.ChangePin(credentials) is HttpStatusCode.OK)
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            if (_credentialsUpdateService.ChangePin(credentials.CustomerName, null, credentials.Pin) is HttpStatusCode.OK)
             {
                 return Ok();
             }
-            else if (_credentialsUpdateService.ChangePassword(credentials) is HttpStatusCode.OK)
+            else if (_credentialsUpdateService.ChangePassword(credentials.CustomerName, credentials.Password, null) is HttpStatusCode.OK)
             {
                 return Ok();
             }
-           
+            
             return NotFound();
         }
     }

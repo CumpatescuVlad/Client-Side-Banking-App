@@ -1,23 +1,22 @@
-﻿using DataApi.Modeles;
-namespace DataApi.src
+﻿namespace DataApi.src
 {
     public static class QuerryStrings
     {
         public static string ReadCustomer(string customerName) => $"Select CustomerFullName ,CustomerPassword , CustomerPhoneNumber , CustomerEmail ,CustomerPin From Customer Where CustomerFullName='{customerName}'";
 
-        public static string UpdateCredentials(CredentialsModel credentials)
+        public static string UpdateCredentials(string userName, string? password, string? pin)
         {
-            string querry ="";
+            string querry = "";
 
-            if (credentials.Password is null)
+            if (password is null)
             {
-                querry = $"Update Customer Set CustomerPin='{credentials.Pin}' Where CustomerFullName='{credentials.UserName}'";
+                querry = $"Update Customer Set CustomerPin='{pin}' Where CustomerFullName='{userName}'";
             }
-            else if(credentials.Pin is null)
+            else if (pin is null)
             {
-                querry = $"Update Customer Set CustomerPassword='{credentials.Password}' Where CustomerFullName='{credentials.UserName}'";
+                querry = $"Update Customer Set CustomerPassword='{password}' Where CustomerFullName='{userName}'";
             }
-            
+
             return querry;
         }
     }

@@ -1,6 +1,4 @@
-﻿using DataApi.src;
-using DataApi.Modeles;
-using System.Net;
+﻿using System.Net;
 
 namespace DataApi.Services
 {
@@ -13,10 +11,10 @@ namespace DataApi.Services
             _credentials = credentials;
         }
 
-        public HttpStatusCode ChangePassword(CredentialsModel credentials)
+        public HttpStatusCode ChangePassword(string userName, string? password, string? pin)
         {
             var statusCode = HttpStatusCode.NotModified;
-            if (_credentials.UpdateUserCredentials(credentials) is HttpStatusCode.OK)
+            if (_credentials.UpdateUserCredentials(userName, password, pin) is HttpStatusCode.OK)
             {
                 statusCode = HttpStatusCode.OK;
             }
@@ -24,11 +22,11 @@ namespace DataApi.Services
             return statusCode;
         }
 
-        public HttpStatusCode ChangePin(CredentialsModel credentials)
+        public HttpStatusCode ChangePin(string userName, string? password, string? pin)
         {
             var statusCode = HttpStatusCode.NotModified;
 
-            if (_credentials.UpdateUserCredentials(credentials) is HttpStatusCode.OK)
+            if (_credentials.UpdateUserCredentials(userName, password, pin) is HttpStatusCode.OK)
             {
                 statusCode = HttpStatusCode.OK;
             }

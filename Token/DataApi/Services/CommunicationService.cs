@@ -1,8 +1,8 @@
 ﻿using DataApi.Modeles;
-using DataApi.src;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
+using System.Net;
 
 namespace DataApi.Services
 {
@@ -10,6 +10,7 @@ namespace DataApi.Services
     {
         private readonly MimeMessage mimeMessage = new();
         private readonly SmtpClient emailClient = new();
+        private readonly HttpClient httpClient = new();
 
         public void SendEmail(string content, EmailModel emailModel)
         {
@@ -34,11 +35,11 @@ namespace DataApi.Services
 
         }
 
-        public void SendSMS()
+        public HttpStatusCode SendSMS(string content, SmsModel smsModel)
         {
+            var request = httpClient.GetAsync($"https://platform.clickatell.com/messages/http/send?apiKey=fhlOJRDERgqU2bTDhyWM_Q==&to=4{smsModel.ReciverPhoneNumber}&content={content}").Result;
 
-
-
+            return request.StatusCode;
         }
 
     }

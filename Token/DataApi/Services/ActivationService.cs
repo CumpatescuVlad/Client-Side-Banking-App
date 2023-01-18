@@ -17,27 +17,40 @@ namespace DataApi.Services
         {
             var credentials = _credentials.ReadUserCredentials(emailModel.CustomerName);
 
-            bool result;
+            bool emailSent;
 
             if (credentials.CustomerPin is null)
             {
-                result = false;
+                emailSent = false;
             }
             else
             {
                 _communicationService.SendEmail(credentials.CustomerPin, emailModel);
 
-                result = true;
+                emailSent = true;
             }
 
-            return result;
+            return emailSent;
         }
 
-        public void ActivateTroughSMS()
+        public bool SmsSentSuccesfully(SmsModel smsModel)
         {
+            var credentials = _credentials.ReadUserCredentials(smsModel.CustomerName);
 
+            bool smsSent;
 
+            if (credentials.CustomerPin is null)
+            {
+                smsSent = false;
+            }
+            else
+            {
+                _communicationService.SendSMS($"Activation Pin:{credentials.CustomerPin}", smsModel);
 
+                smsSent = true;
+            }
+
+            return smsSent;
         }
     }
 }

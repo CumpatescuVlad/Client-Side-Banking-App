@@ -4,7 +4,7 @@ namespace DataApi.Services
 {
     public interface IActivationService
     {
-        void ActivateTroughSMS();
+        bool SmsSentSuccesfully(SmsModel smsModel);
         bool EmailSentSuccesfully(EmailModel emailModel);
     }
 }

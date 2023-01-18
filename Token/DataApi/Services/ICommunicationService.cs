@@ -1,10 +1,11 @@
 ﻿using DataApi.Modeles;
+using System.Net;
 
 namespace DataApi.Services
 {
     public interface ICommunicationService
     {
         void SendEmail(string content, EmailModel emailModel);
-        void SendSMS();
+        HttpStatusCode SendSMS(string content, SmsModel smsModel);
     }
 }
