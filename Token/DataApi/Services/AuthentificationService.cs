@@ -6,9 +6,9 @@ namespace DataApi.Services
 {
     public class AuthentificationService : IAuthentificationService
     {
-        private readonly ICredentials _credentials;
+        private readonly ICredentialsProvider _credentials;
 
-        public AuthentificationService(ICredentials credentials)
+        public AuthentificationService(ICredentialsProvider credentials)
         {
             _credentials = credentials;
         }

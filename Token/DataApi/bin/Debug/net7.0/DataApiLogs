@@ -1,0 +1,5 @@
+2023-01-18 22:20:08,670 INFO  Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Now listening on: https://localhost:7168
+2023-01-18 22:20:09,119 INFO  Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Now listening on: http://localhost:5029
+2023-01-18 22:20:09,125 INFO  Microsoft.Hosting.Lifetime.OnApplicationStarted [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+2023-01-18 22:20:09,131 INFO  Microsoft.Hosting.Lifetime.OnApplicationStarted [0] - MESSAGE: Hosting environment: Development
+2023-01-18 22:20:09,134 INFO  Microsoft.Hosting.Lifetime.RunInternal [0] - MESSAGE: Content root path: E:\CODE REPOS\BankingApp\Token\DataApi

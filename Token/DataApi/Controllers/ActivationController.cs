@@ -1,6 +1,7 @@
 ﻿using DataApi.Modeles;
 using DataApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace DataApi.Controllers
 {
@@ -30,10 +31,15 @@ namespace DataApi.Controllers
             {
                 return Ok();
             }
-           
+
+            else if (!_activationService.EmailSentSuccesfully(emailModel))
+            {
+                return StatusCode(500);
+            }
 
             return NotFound();
         }
+
 
         [HttpPost]
 
@@ -50,7 +56,12 @@ namespace DataApi.Controllers
             {
                 return Ok();
             }
-           
+
+            else if (!_activationService.SmsSentSuccesfully(smsModel))
+            {
+                return StatusCode(500);
+            }
+
             return NotFound();
         }
     }

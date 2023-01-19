@@ -1,12 +1,13 @@
 ﻿using System.Net;
+using DataApi.src;
 
 namespace DataApi.Services
 {
     public class CredentialsUpdateService : ICredentialsUpdateService
     {
-        private readonly src.ICredentials _credentials;
+        private readonly ICredentialsProvider _credentials;
 
-        public CredentialsUpdateService(src.ICredentials credentials)
+        public CredentialsUpdateService(ICredentialsProvider credentials)
         {
             _credentials = credentials;
         }

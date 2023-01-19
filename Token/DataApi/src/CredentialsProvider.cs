@@ -6,13 +6,15 @@ using System.Net;
 
 namespace DataApi.src
 {
-    public class Credentials : ICredentials
+    public class CredentialsProvider : ICredentialsProvider
     {
         private readonly ConfigModel _config;
+        private readonly ILogger<CredentialsProvider> _logger;
 
-        public Credentials(IOptions<ConfigModel> config)
+        public CredentialsProvider(IOptions<ConfigModel> config, ILogger<CredentialsProvider> logger)
         {
             _config = config.Value;
+            _logger = logger;
         }
 
         public UserDTO ReadUserCredentials(string customerName)
@@ -23,26 +25,46 @@ namespace DataApi.src
 
             var readPassword = new SqlCommand(QuerryStrings.ReadCustomer(customerName), connection);
 
-            connection.Open();
-
-            var reader = readPassword.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                userData = new UserDTO()
+                connection.Open();
+
+                var reader = readPassword.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    CustomerFullName = reader.GetString(0),
-                    CustomerPassword = reader.GetString(1),
-                    CustomerPhoneNumber = reader.GetString(2),
-                    CustomerEmail = reader.GetString(3),
-                    CustomerPin = reader.GetString(4),
-                };
+                    userData = new UserDTO()
+                    {
+                        CustomerFullName = reader.GetString(0),
+                        CustomerPassword = reader.GetString(1),
+                        CustomerPhoneNumber = reader.GetString(2),
+                        CustomerEmail = reader.GetString(3),
+                        CustomerPin = reader.GetString(4),
+                    };
 
+                }
+                return userData;
             }
-            connection.Close();
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
 
-            return userData;
+                return userData = new UserDTO() 
+                {
+                    CustomerFullName = null,
+                    CustomerPassword = null,
+                    CustomerPhoneNumber = null,
+                    CustomerEmail = null,
+                    CustomerPin = null,
 
+                };
+                
+            }
+            finally
+            {
+                connection.Close();
+            }
+           
         }
 
         public HttpStatusCode UpdateUserCredentials(string userName, string? password, string? pin)

@@ -20,7 +20,7 @@ namespace DataApi.Controllers
 
         public IActionResult Login(string customerName, string password)
         {
-            if (!ModelState.IsValid)
+            if (customerName is null||password is null)
             {
                 return BadRequest();
             }

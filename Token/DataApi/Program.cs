@@ -1,6 +1,7 @@
 using DataApi.Config;
 using DataApi.Services;
 using DataApi.src;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +12,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<ConfigModel>(builder.Configuration.GetSection("Config"));
-builder.Services.AddScoped<ICredentials, Credentials>();
+builder.Services.AddScoped<ICredentialsProvider, CredentialsProvider>();
 builder.Services.AddScoped<IAuthentificationService, AuthentificationService>();
-builder.Services.AddScoped<ICommunicationService, CommunicationService>();
+builder.Services.AddScoped<ICommunicationProvider, CommunicationProvider>();
 builder.Services.AddScoped<IActivationService, ActivationService>();
 builder.Services.AddScoped<ICredentialsUpdateService, CredentialsUpdateService>();
+builder.Host.UseSerilog((ctx, lc) =>
+lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -1,13 +1,14 @@
 ﻿using DataApi.Modeles;
 using DataApi.src;
 
+
 namespace DataApi.Services
 {
     public class ActivationService : IActivationService
     {
-        private readonly ICredentials _credentials;
-        private readonly ICommunicationService _communicationService;
-        public ActivationService(ICredentials credentials, ICommunicationService communicationService)
+        private readonly ICredentialsProvider _credentials;
+        private readonly ICommunicationProvider _communicationService;
+        public ActivationService(ICredentialsProvider credentials, ICommunicationProvider communicationService)
         {
             _credentials = credentials;
             _communicationService = communicationService;
@@ -16,21 +17,19 @@ namespace DataApi.Services
         public bool EmailSentSuccesfully(EmailModel emailModel)
         {
             var credentials = _credentials.ReadUserCredentials(emailModel.CustomerName);
+            bool status;
 
-            bool emailSent;
-
-            if (credentials.CustomerPin is null)
+            if (credentials.CustomerPin is not null && _communicationService.SendEmail(credentials.CustomerPin, emailModel) is System.Net.HttpStatusCode.OK)
             {
-                emailSent = false;
+                status = true;
             }
             else
             {
-                _communicationService.SendEmail(credentials.CustomerPin, emailModel);
+                status = false;
 
-                emailSent = true;
             }
 
-            return emailSent;
+            return status;
         }
 
         public bool SmsSentSuccesfully(SmsModel smsModel)
@@ -39,15 +38,13 @@ namespace DataApi.Services
 
             bool smsSent;
 
-            if (credentials.CustomerPin is null)
+            if (credentials.CustomerPin is not null && _communicationService.SendSMS($"Activation Pin:{credentials.CustomerPin}", smsModel) is System.Net.HttpStatusCode.OK)
             {
-                smsSent = false;
+                smsSent = true;
             }
             else
             {
-                _communicationService.SendSMS($"Activation Pin:{credentials.CustomerPin}", smsModel);
-
-                smsSent = true;
+                smsSent = false;
             }
 
             return smsSent;

@@ -69,3 +69,14 @@ E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\runtimes\win\lib\netcore
 E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\MailKit.dll
 E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\MimeKit.dll
 E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\BouncyCastle.Crypto.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.AspNetCore.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.Expressions.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.Extensions.Hosting.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.Extensions.Logging.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.Sinks.Debug.dll
+E:\CODE REPOS\BankingApp\Token\DataApi\bin\Debug\net7.0\Serilog.Sinks.File.dll

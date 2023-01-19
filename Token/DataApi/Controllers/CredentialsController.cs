@@ -1,6 +1,7 @@
 ﻿using DataApi.Modeles;
 using DataApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Net;
 
 namespace DataApi.Controllers
@@ -10,10 +11,11 @@ namespace DataApi.Controllers
     public class CredentialsController : ControllerBase
     {
         private readonly ICredentialsUpdateService _credentialsUpdateService;
-
+        
         public CredentialsController(ICredentialsUpdateService credentialsUpdateService)
         {
             _credentialsUpdateService = credentialsUpdateService;
+            
         }
 
         [HttpPut]
@@ -22,11 +24,6 @@ namespace DataApi.Controllers
 
         public IActionResult Credentials(CredentialsModel credentials)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-
             if (_credentialsUpdateService.ChangePin(credentials.CustomerName, null, credentials.Pin) is HttpStatusCode.OK)
             {
                 return Ok();
