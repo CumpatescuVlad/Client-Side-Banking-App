@@ -1,6 +1,8 @@
 using DataApi.Config;
+using DataApi.Filters;
 using DataApi.Services;
 using DataApi.src;
+using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,9 @@ builder.Services.AddScoped<IActivationService, ActivationService>();
 builder.Services.AddScoped<ICredentialsUpdateService, CredentialsUpdateService>();
 builder.Host.UseSerilog((ctx, lc) =>
 lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
+builder.Services.Configure<ApiBehaviorOptions>(options=>
+options.SuppressModelStateInvalidFilter=true);
+builder.Services.AddScoped<ValidateImput>();
 var app = builder.Build();
 
 

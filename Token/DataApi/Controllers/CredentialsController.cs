@@ -1,4 +1,5 @@
-﻿using DataApi.Modeles;
+﻿using DataApi.Filters;
+using DataApi.Modeles;
 using DataApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -21,6 +22,8 @@ namespace DataApi.Controllers
         [HttpPut]
 
         [Route("api/ChangeUserCredentials")]
+
+        [ServiceFilter(typeof(ValidateImput))]
 
         public IActionResult Credentials(CredentialsModel credentials)
         {

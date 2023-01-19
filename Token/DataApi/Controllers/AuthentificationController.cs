@@ -1,4 +1,5 @@
-﻿using DataApi.Services;
+﻿using DataApi.Filters;
+using DataApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DataApi.Controllers
@@ -20,9 +21,10 @@ namespace DataApi.Controllers
 
         public IActionResult Login(string customerName, string password)
         {
-            if (customerName is null||password is null)
+            if (customerName is null || password is null)
             {
-                return BadRequest();
+                return UnprocessableEntity();
+
             }
 
             if (_authentification.LoginSuccesfully(customerName, password))

@@ -1,3 +1,4 @@
-2.Add Some Logging;
+1.Implemt manual model state checking, use atribute filters for logginf and validation
+2.Add Some Logging,add exception into te response;
 3.Fix Smtp Setver;
 4.Try To merge two collections into single one by method return list();

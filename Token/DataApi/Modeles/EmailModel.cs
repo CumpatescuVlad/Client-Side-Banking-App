@@ -1,23 +1,24 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 
 namespace DataApi.Modeles
 {
     public class EmailModel
     {
-        [Required]
+        [Required(ErrorMessage ="Sender Name cannot be null.")]
         public string? SenderName { get; set; }
-        [Required]
+        [EmailAddress(ErrorMessage ="The Email adress is not in the correct format.")]
         public string? SenderAdress { get; set; }
-        [Required]
+        [EmailAddress(ErrorMessage = "The Email adress is not in the correct format.")]
         public string? ReciverAdress { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Subject cannot be null.")]
         public string? Subject { get; set; }
-        [Required]
+        [Required(ErrorMessage = "CustomerName cannot be null.")]
         public string? CustomerName { get; set; }
-        [Required]
+        [EmailAddress(ErrorMessage = "The Email adress is not in the correct format.")]
         public string? AuthentificationEmail { get; set; }
-        [Required]
+        [Required(ErrorMessage = "AuthentificationPassword cannot be null.")]
         public string? AuthentificationPassword { get; set; }
 
     }

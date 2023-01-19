@@ -1,4 +1,5 @@
-﻿using DataApi.Modeles;
+﻿using DataApi.Filters;
+using DataApi.Modeles;
 using DataApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -20,13 +21,9 @@ namespace DataApi.Controllers
 
         [Route("api/EmailActivation")]
 
+        [ServiceFilter(typeof(ValidateImput))]
         public IActionResult EmailActivation(EmailModel emailModel)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-
             if (_activationService.EmailSentSuccesfully(emailModel))
             {
                 return Ok();
@@ -45,13 +42,9 @@ namespace DataApi.Controllers
 
         [Route("api/SmsActivation")]
 
+        [ServiceFilter(typeof(ValidateImput))]
         public IActionResult SmsActivation(SmsModel smsModel)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-
             if (_activationService.SmsSentSuccesfully(smsModel))
             {
                 return Ok();

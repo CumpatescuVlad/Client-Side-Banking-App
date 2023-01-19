@@ -5,7 +5,7 @@ namespace DataApi.Modeles
 {
     public class CredentialsModel
     {
-        [Required]
+        [Required(ErrorMessage ="CustomerName cannot be null.")]
         public string? CustomerName { get; set; }
 
         public string? Password { get; set; }
