@@ -46,7 +46,7 @@
             }
             MessageBox.Show("Statement Generated.");
 
-           
+
         }
 
         private void backBtn_Click(object sender, EventArgs e)

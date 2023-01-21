@@ -23,7 +23,7 @@ namespace ClientSideApp
 
         private void InfoTab_MouseEnter(object? sender, EventArgs e)
         {
-            bool labelsAreEmpty = String.IsNullOrEmpty(accountTypeContent.Text) || String.IsNullOrEmpty(accountOwnerContent.Text) 
+            bool labelsAreEmpty = String.IsNullOrEmpty(accountTypeContent.Text) || String.IsNullOrEmpty(accountOwnerContent.Text)
                                   || String.IsNullOrEmpty(ibanContent.Text) || String.IsNullOrEmpty(AvailabbleAmountContent.Text);
             if (labelsAreEmpty is true)
             {
@@ -33,7 +33,7 @@ namespace ClientSideApp
 
                 ReadAccountData(_customerData.CustomerFullName, ibanContent, AvailabbleAmountContent);
             }
-           
+
         }
 
         private void InfoTab_Load(object sender, EventArgs e)
@@ -107,6 +107,6 @@ namespace ClientSideApp
 
 
         }
-       
+
     }
 }

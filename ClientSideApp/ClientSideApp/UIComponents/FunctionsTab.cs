@@ -18,15 +18,15 @@ namespace ClientSideApp
             this.MouseEnter += FunctionsTab_MouseEnter;
 
         }
-        
+
         private void FunctionsTab_MouseEnter(object? sender, EventArgs e)
         {
-            
+
             if (String.IsNullOrEmpty(owner.Text))
             {
                 owner.Text = data.ReadCreditCard(_customerData.CustomerFullName);
             }
-           
+
         }
 
         private void Statementlabel_Click(object? sender, EventArgs e)
@@ -62,6 +62,6 @@ namespace ClientSideApp
 
         }
 
-        
+
     }
 }

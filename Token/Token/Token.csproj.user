@@ -3,15 +3,4 @@
   <PropertyGroup>
     <_LastSelectedProfileId>E:\CODE REPOS\BankingApp\Token\Token\Token\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Update="UIComponents\AppAccountManagement.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="UIComponents\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="UIComponents\LoginTab.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-  </ItemGroup>
 </Project>

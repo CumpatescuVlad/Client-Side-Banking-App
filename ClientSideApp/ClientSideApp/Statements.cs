@@ -17,7 +17,7 @@ namespace ClientSideApp
 
         public void GenerateWordStatement(TextBox startingDate, TextBox endingDate)
         {
-            
+
             FileStream wordOutputFile = new(Path.GetFullPath(@$"{Temp.FolderPath}\OriginalStatement.docx"), FileMode.Create, FileAccess.ReadWrite);
             AccountData accountData = JsonConvert.DeserializeObject<AccountData>(Temp.ReadFile("AccountData.json"));
 

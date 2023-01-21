@@ -38,7 +38,7 @@ namespace DataApi.src
                 emailClient.Authenticate(emailModel.AuthentificationEmail, emailModel.AuthentificationPassword);
 
                 emailClient.Send(mimeMessage);
-
+                
                 return statusCode = HttpStatusCode.OK;
             }
             catch (Exception ex)

@@ -7,7 +7,7 @@ namespace ClientSideApp
     {
         private readonly ExtractData customerData = new();
         CustomerData _customerData = JsonConvert.DeserializeObject<CustomerData>(Temp.ReadTokenFiles("CustomerData.json"));
-       
+
         public OverviewTab()
         {
             InitializeComponent();
@@ -16,7 +16,7 @@ namespace ClientSideApp
             this.MouseEnter += OverviewTab_MouseEnter;
 
         }
-        
+
         private void OverviewTab_MouseEnter(object? sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(richTextBox1.Text))
@@ -27,7 +27,7 @@ namespace ClientSideApp
                 #endregion
 
             }
-            
+
         }
 
 

@@ -73,16 +73,16 @@ namespace ClientSideApp
 
             while (reader.Read())
             {
-                accountData = new AccountData() 
+                accountData = new AccountData()
                 {
-                    AccountIBAN= reader.GetString(0),
-                    AccountNumber= reader.GetString(1),
+                    AccountIBAN = reader.GetString(0),
+                    AccountNumber = reader.GetString(1),
                     Balance = reader.GetInt32(2),
-                    AccountName= reader.GetString(3),
+                    AccountName = reader.GetString(3),
 
                 };
 
-                Temp.CreateFile("AccountData.json",JsonConversion.SearializeData(accountData));
+                Temp.CreateFile("AccountData.json", JsonConversion.SearializeData(accountData));
 
                 accountInfo = $"Current Account {reader.GetString(3)} {reader.GetInt32(2)} RON.";
 
