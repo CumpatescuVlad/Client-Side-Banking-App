@@ -8,29 +8,29 @@ namespace BankingApi.Controllers
     [ApiController]
     public class AccountInfoController : ControllerBase
     {
-        private readonly IDataService _dataService;
+        private readonly IInfoService _infoService;
 
-        public AccountInfoController(IDataService dataService)
+        public AccountInfoController(IInfoService infoService)
         {
-            _dataService = dataService;
+            _infoService = infoService;
         }
 
         [HttpGet]
 
-        [Route("/api/GetAccount/{customerName}")]
+        [Route("/Account/GetInfo/{customerName}")]
 
         [ServiceFilter(typeof(ModelValidation))]
 
         public IActionResult AccountInfo(string customerName)
         {
-            var accountInfo = _dataService.GetAccountInfo(customerName);
+            var accountInfo = _infoService.GetAccountInfo(customerName);
 
-            if (accountInfo is not null)
+            if (accountInfo is null)
             {
-                return Ok(accountInfo);
+                NotFound("Customer Name Could Not Be Found");
             }
 
-            return NotFound("Customer Name Could Not Be Found");
+            return Ok(accountInfo);
         }
 
     }

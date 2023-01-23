@@ -17,7 +17,9 @@ options.SuppressModelStateInvalidFilter = true);
 builder.Services.AddScoped<ModelValidation>();
 builder.Services.Configure<ConfigurationModel>(builder.Configuration.GetSection("Config"));
 builder.Services.AddScoped<IDataAcces, DataAcces>();
-builder.Services.AddScoped<IDataService, DataService>();
+builder.Services.AddScoped<IInfoService, InfoService>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
+
 
 //configure serilog
 var app = builder.Build();

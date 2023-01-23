@@ -2,6 +2,8 @@
 {
     public class TransactionsDTO
     {
+        public string? CustomerFullName { get;set; }
+
         public string? TypeOfTransaction { get; set; }
 
         public string? AccountUsed { get; set; }

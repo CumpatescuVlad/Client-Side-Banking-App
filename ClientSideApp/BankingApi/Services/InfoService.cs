@@ -4,11 +4,11 @@ using Newtonsoft.Json;
 
 namespace BankingApi.Services
 {
-    public class DataService : IDataService
+    public class InfoService : IInfoService
     {
         private readonly IDataAcces _dataAcces;
 
-        public DataService(IDataAcces dataAcces)
+        public InfoService(IDataAcces dataAcces)
         {
             _dataAcces = dataAcces;
         }
@@ -18,11 +18,9 @@ namespace BankingApi.Services
             return JsonConvert.SerializeObject(_dataAcces.ReadAccountInfo(customerName));
         }
 
-        public string GetAccountTransactions(string customerName,string accountNumber) 
+        public string GetCompaniesNames()
         {
-            return JsonConvert.SerializeObject(_dataAcces.ReadAccountTransactions(customerName,accountNumber));
+            return JsonConvert.SerializeObject(_dataAcces.ReadCompanyNames());
         }
-
-
     }
 }
