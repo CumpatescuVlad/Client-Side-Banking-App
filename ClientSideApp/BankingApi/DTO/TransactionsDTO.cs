@@ -2,17 +2,27 @@
 {
     public class TransactionsDTO
     {
-        public string? CustomerFullName { get;set; }
+        public TransactionsDTO(List<string>? customerFullName, List<string>? typeOfTransaction, List<string>? accountUsed, List<int>? amount, List<string>? recipient, List<string>? transactionDate)
+        {
+            CustomerFullName = customerFullName;
+            TypeOfTransaction = typeOfTransaction;
+            AccountUsed = accountUsed;
+            Amount = amount;
+            Recipient = recipient;
+            TransactionDate = transactionDate;
+        }
 
-        public string? TypeOfTransaction { get; set; }
+        public List<string>? CustomerFullName { get;private set; }
 
-        public string? AccountUsed { get; set; }
+        public List<string>? TypeOfTransaction { get; private set; }
 
-        public int? Amount { get; set; }
+        public List<string>? AccountUsed { get; private set; }
 
-        public string? Recipient { get; set; }
+        public List<int>? Amount { get; private set; }
 
-        public string? TransactionDate { get; set; }
+        public List<string>? Recipient { get; private set; }
+
+        public List<string>? TransactionDate { get; private set; }
 
 
     }

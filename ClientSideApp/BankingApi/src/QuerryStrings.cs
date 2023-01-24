@@ -31,9 +31,13 @@ namespace BankingApi.src
             {
                 updateQuerry = $"Update Accounts set Ballance = (Select Ballance From Accounts Where CustomerFullName='{customerName}')-'{ballance}' Where CustomerFullName='{customerName}'";
             }
-            else
+            else if(customerStatus == "Recipient")
             {
                 updateQuerry = $"Update Accounts set Ballance = (Select Ballance From Accounts Where CustomerFullName='{customerName}')+'{ballance}' Where CustomerFullName='{customerName}'";
+            }
+            else
+            {
+                updateQuerry = $"Update Companies set CompanyBallance=(Select CompanyBallance From Companies  Where CompanyName ='{customerName}')+'{ballance}' Where CompanyName='{customerName}'";
             }
 
             return updateQuerry;

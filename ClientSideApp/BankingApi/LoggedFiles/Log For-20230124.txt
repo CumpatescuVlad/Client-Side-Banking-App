@@ -1,0 +1,17 @@
+2023-01-24 02:21:14.887 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-24 02:21:14.920 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-24 02:21:14.924 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-24 02:21:14.925 +02:00 [INF] Hosting environment: Development
+2023-01-24 02:21:14.926 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-24 03:45:45.492 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-24 03:45:45.535 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-24 03:45:45.538 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-24 03:45:45.539 +02:00 [INF] Hosting environment: Development
+2023-01-24 03:45:45.540 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-24 03:53:03.452 +02:00 [ERR] Invalid column name 'Ballance'.
+2023-01-24 03:53:03.492 +02:00 [ERR] Invalid column name 'Ballance'.
+2023-01-24 03:55:08.077 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-24 03:55:08.106 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-24 03:55:08.110 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-24 03:55:08.112 +02:00 [INF] Hosting environment: Development
+2023-01-24 03:55:08.113 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi

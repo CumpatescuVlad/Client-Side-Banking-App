@@ -11,13 +11,44 @@ namespace BankingApi.Controllers
     [ApiController]
     public class FunctionsController : ControllerBase
     {
-        private readonly ITransactionService _transactionService;
+        private readonly IInfoService _infoService;
 
-        public FunctionsController(ITransactionService transactionService)
+        public FunctionsController(IInfoService infoService)
         {
-            _transactionService = transactionService;
+            _infoService= infoService;
         }
 
-       
+        [HttpGet]
+
+        [Route("Functions/Companies/GetCompanies")]
+
+        [ServiceFilter(typeof(ModelValidation))]
+
+        public IActionResult GetCompanies()
+        {
+            var companiesInfo = _infoService.GetCompaniesNames();
+
+            if (companiesInfo is null)
+            {
+                return NotFound();
+
+            }
+            return Ok(companiesInfo);
+        }
+
+        [HttpPost]
+
+        [Route("Functions/BillPayment")]
+
+        [ServiceFilter(typeof(ModelValidation))]
+
+        public IActionResult PayBill(TransferModel transferModel)
+        {
+
+
+            return BadRequest();
+        }
+
+        
     }
 }

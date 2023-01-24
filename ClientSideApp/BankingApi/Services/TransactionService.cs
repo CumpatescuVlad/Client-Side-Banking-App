@@ -7,10 +7,12 @@ namespace BankingApi.Services
 {
     public class TransactionService : ITransactionService
     {
-        private readonly IDataAcces _dataAcces;
-        public TransactionService(IDataAcces dataAcces)
+        private readonly IModifyData _dataAcces;
+        private readonly IReadData _readData;
+        public TransactionService(IModifyData dataAcces, IReadData readData)
         {
             _dataAcces = dataAcces;
+            _readData = readData;
         }
         public HttpStatusCode NewTransfer(TransferModel transferModel)
         {
@@ -29,12 +31,13 @@ namespace BankingApi.Services
 
         public string GetIncomeTransactions(string customerName, string accountIBAN)
         {
-            return JsonConvert.SerializeObject(_dataAcces.ReadAccountTransactions(customerName, accountIBAN, "Income"));
+            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName, accountIBAN, "Income"));
         }
 
         public string GetOutcomeTransactions(string customerName, string accountIBAN)
         {
-            return JsonConvert.SerializeObject(_dataAcces.ReadAccountTransactions(customerName, accountIBAN, "Outcome"));
+            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName, accountIBAN, "Outcome"));
         }
+
     }
 }

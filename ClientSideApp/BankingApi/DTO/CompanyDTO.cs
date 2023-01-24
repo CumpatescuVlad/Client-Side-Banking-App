@@ -2,16 +2,16 @@
 {
     public class CompanyDTO
     {
-        public CompanyDTO(string? companyName, string? companyService, string? companyIBAN)
+        public CompanyDTO(List<string>? companyName, List<string>? companyService, List<string>? companyIBAN)
         {
             CompanyName = companyName;
             CompanyService = companyService;
             CompanyIBAN = companyIBAN;
         }
-
-        public string? CompanyName { get; set; }
-        public string? CompanyService { get; set; }
-        public string? CompanyIBAN { get; set; }
+       
+        public List<string>? CompanyName { get; private set; }
+        public List<string>? CompanyService { get; private set; }
+        public List<string>? CompanyIBAN { get; private set; }
 
     }
 }

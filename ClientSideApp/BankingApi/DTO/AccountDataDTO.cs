@@ -2,13 +2,21 @@
 {
     public class AccountDataDTO
     {
-        public string? CustomerName { get; set; }
+        public AccountDataDTO(string? customerName, string? accountNumber, string? accountIBAN, int? balance)
+        {
+            CustomerName = customerName;
+            AccountNumber = accountNumber;
+            AccountIBAN = accountIBAN;
+            Balance = balance;
+        }
 
-        public string? AccountNumber { get; set; }
+        public string? CustomerName { get; private set; }
 
-        public string? AccountIBAN { get; set; }
+        public string? AccountNumber { get; private set; }
 
-        public int? Balance { get; set; }
+        public string? AccountIBAN { get; private set; }
+
+        public int? Balance { get; private set; }
 
     }
 }

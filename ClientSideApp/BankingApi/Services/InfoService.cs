@@ -6,21 +6,21 @@ namespace BankingApi.Services
 {
     public class InfoService : IInfoService
     {
-        private readonly IDataAcces _dataAcces;
+        private readonly IReadData _readData;
 
-        public InfoService(IDataAcces dataAcces)
+        public InfoService(IReadData readData)
         {
-            _dataAcces = dataAcces;
+            _readData = readData;
         }
 
         public string GetAccountInfo(string customerName)
         {
-            return JsonConvert.SerializeObject(_dataAcces.ReadAccountInfo(customerName));
+            return JsonConvert.SerializeObject(_readData.ReadAccountInfo(customerName));
         }
 
         public string GetCompaniesNames()
         {
-            return JsonConvert.SerializeObject(_dataAcces.ReadCompanyNames());
+            return JsonConvert.SerializeObject(_readData.ReadCompanyNames());
         }
     }
 }
