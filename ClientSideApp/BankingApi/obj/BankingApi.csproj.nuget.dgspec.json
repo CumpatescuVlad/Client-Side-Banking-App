@@ -64,6 +64,14 @@
               "target": "Package",
               "version": "[6.4.0, )"
             },
+            "Syncfusion.DocIO.Net.Core": {
+              "target": "Package",
+              "version": "[20.4.0.44, )"
+            },
+            "Syncfusion.Pdf.Net.Core": {
+              "target": "Package",
+              "version": "[20.4.0.44, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"

@@ -3,6 +3,7 @@ using BankingApi.DTO;
 using BankingApi.src;
 using Microsoft.Extensions.Options;
 using System.Data.SqlClient;
+using System.Transactions;
 
 namespace BankingApi.DataAcces
 {
@@ -30,7 +31,7 @@ namespace BankingApi.DataAcces
             return accountData;
         }
 
-        public TransactionsDTO ReadAccountTransactions(string customerName, string accountIBAN, string status)
+        public TransactionsDTO ReadAccountTransactions(string customerName,string status)
         {
             TransactionsDTO? transactions = null;
             var customerNameList = new List<string>();
@@ -40,7 +41,7 @@ namespace BankingApi.DataAcces
             var recipientNameList = new List<string>();
             var transactionDateList = new List<string>();
             var _connection = new SqlConnection(_configModel.ConnectionString);
-            var transactionCommand = new SqlCommand(QuerryStrings.SelectAccountTransactions(customerName, accountIBAN, status), _connection);
+            var transactionCommand = new SqlCommand(QuerryStrings.SelectAccountTransactions(customerName,status), _connection);
 
             _connection.Open();
             if (status == "Income")
@@ -51,7 +52,7 @@ namespace BankingApi.DataAcces
                 {
                     customerNameList.Add(reader.GetString(0));
                     transactionTypeList.Add(reader.GetString(1));
-                    accountUsedList.Add("Current Account");
+                    accountUsedList.Add("You Recived");
                     amountList.Add(reader.GetInt32(2));
                     recipientNameList.Add(reader.GetString(3));
                     transactionDateList.Add(reader.GetString(4));
@@ -67,7 +68,7 @@ namespace BankingApi.DataAcces
 
                 while (reader.Read())
                 {
-                    customerNameList.Add("Current Account");
+                    customerNameList.Add("You Transfered");
                     transactionTypeList.Add(reader.GetString(0));
                     accountUsedList.Add(reader.GetString(1));
                     amountList.Add(reader.GetInt32(2));
@@ -81,6 +82,40 @@ namespace BankingApi.DataAcces
             }
             _connection.Close();
 
+
+            return transactions;
+        }
+
+        public string ReadStatementTransactions(string customerName, string status)
+        {
+            var _connection = new SqlConnection(_configModel.ConnectionString);
+            var transactionCommand = new SqlCommand(QuerryStrings.SelectAccountTransactions(customerName, status), _connection);
+            string? transactions = null;
+            _connection.Open();
+
+            if (status == "Income")
+            {
+                var reader = transactionCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    transactions = $"{reader.GetString(0)} Transfered You:{reader.GetInt32(3)} On {reader.GetString(4)}";
+
+                }
+
+            }
+            else if (status == "Outcome")
+            {
+                var reader = transactionCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    transactions = $"{"You Transfered"}:{reader.GetInt32(2)} To {reader.GetString(3)} on {reader.GetString(4)}";
+
+                }
+
+            }
+            _connection.Close();
 
             return transactions;
         }

@@ -7,7 +7,7 @@ namespace BankingApi.src
         public static string SelectAccountData(string customerName) => $"Select CustomerFullName,AccountNumber,AccountIBAN,Ballance From Accounts Where CustomerFullName='{customerName}'";
         public static string SelectCompanies() => $"Select CompanyName,CompanyService,CompanyIBAN From Companies";
         //public static string SelectAccountTransactions(string customerName, string accountIBAN) => $"Select TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate From Transactions Where CustomerFullName='{customerName}' AND AccountUsed='{accountIBAN}'";
-        public static string SelectAccountTransactions(string customerName, string accountIBAN, string status)
+        public static string SelectAccountTransactions(string customerName,string status)
         {
             string querryString;
             if (status == "Income")
@@ -18,7 +18,7 @@ namespace BankingApi.src
 
             else
             {
-                querryString = $"Select TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate From Transactions Where CustomerFullName='{customerName}' AND AccountUsed='{accountIBAN}'";
+                querryString = $"Select TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate From Transactions Where CustomerFullName='{customerName}'";
             }
 
             return querryString;
@@ -43,9 +43,8 @@ namespace BankingApi.src
             return updateQuerry;
         }
 
-        public static string InsertTransaction(TransferModel transferModel)=> $"Insert Into Transactions (CustomerFullName,TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate) Values ('{transferModel.CustomerName}','{transferModel.TypeOfTransaction}','{transferModel.AccountIBAN}','{transferModel.Amount}','{transferModel.Recipient}','{transferModel.DateAndTime}')";
+        public static string InsertTransaction(TransferModel transferModel)=> $"Insert Into Transactions (CustomerFullName,TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate) Values ('{transferModel.CustomerName}','{transferModel.TypeOfTransaction}','{transferModel.AccountIBAN}','{transferModel.Amount}','{transferModel.Recipient}','{DateTime.UtcNow}')";
 
-        // public static string InsertTransaction(string customerName,TransferModel transferModel) => $"Insert Into Transactions (CustomerName,TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate) Values ('{customerName}','{transferModel.}')";
 
     }
 }

@@ -29,14 +29,14 @@ namespace BankingApi.Services
             return _dataAcces.InsertTransaction(transferModel);
         }
 
-        public string GetIncomeTransactions(string customerName, string accountIBAN)
+        public string GetIncomeTransactions(string customerName)
         {
-            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName, accountIBAN, "Income"));
+            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName,"Income"));
         }
 
-        public string GetOutcomeTransactions(string customerName, string accountIBAN)
+        public string GetOutcomeTransactions(string customerName)
         {
-            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName, accountIBAN, "Outcome"));
+            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName,"Outcome"));
         }
 
     }

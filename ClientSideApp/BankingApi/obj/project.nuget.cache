@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XVufKUU3BUEuca9mC6BLHg79eqT04Oy0VcC2vfd/3flz3avCV9jT+Zgk//S+onC3gFtqa9bZP5am69+9JtaPDA==",
+  "dgSpecHash": "VsC5jZ7IQWdUx8UcQpUzr9/fMhnxXIkyJ03Us98T7WzbLD/gJOC3p3ETiEtaBdRuCtk+gWNov+rXARJTHfNoug==",
   "success": true,
   "projectFilePath": "E:\\CODE REPOS\\BankingApp\\ClientSideApp\\BankingApi\\BankingApi.csproj",
   "expectedPackageFiles": [
@@ -41,9 +41,15 @@
     "C:\\Users\\VLAD\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\VLAD\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "C:\\Users\\VLAD\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "C:\\Users\\VLAD\\.nuget\\packages\\syncfusion.compression.net.core\\20.4.0.44\\syncfusion.compression.net.core.20.4.0.44.nupkg.sha512",
+    "C:\\Users\\VLAD\\.nuget\\packages\\syncfusion.docio.net.core\\20.4.0.44\\syncfusion.docio.net.core.20.4.0.44.nupkg.sha512",
+    "C:\\Users\\VLAD\\.nuget\\packages\\syncfusion.licensing\\20.4.0.44\\syncfusion.licensing.20.4.0.44.nupkg.sha512",
+    "C:\\Users\\VLAD\\.nuget\\packages\\syncfusion.officechart.net.core\\20.4.0.44\\syncfusion.officechart.net.core.20.4.0.44.nupkg.sha512",
+    "C:\\Users\\VLAD\\.nuget\\packages\\syncfusion.pdf.net.core\\20.4.0.44\\syncfusion.pdf.net.core.20.4.0.44.nupkg.sha512",
     "C:\\Users\\VLAD\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
     "C:\\Users\\VLAD\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\VLAD\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\VLAD\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
     "C:\\Users\\VLAD\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512"
   ],
   "logs": []

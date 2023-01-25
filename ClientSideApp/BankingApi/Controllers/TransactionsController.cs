@@ -46,7 +46,7 @@ namespace BankingApi.Controllers
 
         public IActionResult IncomeTransactions(string customerName, string accountIBAN)
         {
-            var incomeTransactions = _transactionService.GetIncomeTransactions(customerName, accountIBAN);
+            var incomeTransactions = _transactionService.GetIncomeTransactions(customerName);
             
             if (incomeTransactions is null)
             {
@@ -65,7 +65,7 @@ namespace BankingApi.Controllers
 
         public IActionResult OutcomeTransactions(string customerName, string accountIBAN)
         {
-            var outcomeTransactions = _transactionService.GetOutcomeTransactions(customerName, accountIBAN);
+            var outcomeTransactions = _transactionService.GetOutcomeTransactions(customerName);
 
             if (outcomeTransactions is null)
             {

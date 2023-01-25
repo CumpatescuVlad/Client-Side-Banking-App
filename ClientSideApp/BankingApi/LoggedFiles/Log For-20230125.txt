@@ -1,0 +1,45 @@
+2023-01-25 01:48:09.359 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-25 01:48:09.398 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-25 01:48:09.402 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-25 01:48:09.404 +02:00 [INF] Hosting environment: Development
+2023-01-25 01:48:09.406 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-25 01:51:59.015 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-25 01:51:59.065 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-25 01:51:59.069 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-25 01:51:59.070 +02:00 [INF] Hosting environment: Development
+2023-01-25 01:51:59.071 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-25 01:53:41.620 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-25 01:53:41.654 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-25 01:53:41.657 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-25 01:53:41.658 +02:00 [INF] Hosting environment: Development
+2023-01-25 01:53:41.659 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-25 01:58:03.134 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-25 01:58:03.168 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-25 01:58:03.170 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-25 01:58:03.171 +02:00 [INF] Hosting environment: Development
+2023-01-25 01:58:03.172 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-25 02:01:48.225 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-25 02:01:48.255 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-25 02:01:48.257 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-25 02:01:48.258 +02:00 [INF] Hosting environment: Development
+2023-01-25 02:01:48.259 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-25 02:04:13.942 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-25 02:04:13.983 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-25 02:04:13.986 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-25 02:04:13.987 +02:00 [INF] Hosting environment: Development
+2023-01-25 02:04:13.987 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-25 02:05:29.493 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-25 02:05:29.602 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-25 02:05:29.607 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-25 02:05:29.609 +02:00 [INF] Hosting environment: Development
+2023-01-25 02:05:29.612 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-25 02:36:14.617 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-25 02:36:14.663 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-25 02:36:14.668 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-25 02:36:14.669 +02:00 [INF] Hosting environment: Development
+2023-01-25 02:36:14.670 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-25 02:49:51.898 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-25 02:49:51.926 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-25 02:49:51.930 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-25 02:49:51.932 +02:00 [INF] Hosting environment: Development
+2023-01-25 02:49:51.932 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
