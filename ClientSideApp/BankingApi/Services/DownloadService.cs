@@ -1,8 +1,4 @@
-﻿using BankingApi.src;
-using Microsoft.AspNetCore.Mvc;
-
-
-namespace BankingApi.Services
+﻿namespace BankingApi.Services
 {
     public class DownloadService : IDownloadService
     {
@@ -15,7 +11,7 @@ namespace BankingApi.Services
 
         public byte[] DownloadWordStatement()
         {
-            var wordStatenment =$@"{Environment.CurrentDirectory}\Statements\WordStatements\Statement.doc";
+            var wordStatenment = $@"{Environment.CurrentDirectory}\Statements\WordStatements\Statement.doc";
 
             try
             {

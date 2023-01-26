@@ -2,10 +2,10 @@ using BankingApi.Config;
 using BankingApi.DataAcces;
 using BankingApi.Filters;
 using BankingApi.Services;
-using Serilog;
-using Microsoft.AspNetCore.Mvc;
-using Syncfusion.Licensing;
 using BankingApi.src;
+using Microsoft.AspNetCore.Mvc;
+using Serilog;
+using Syncfusion.Licensing;
 
 SyncfusionLicenseProvider.RegisterLicense("NzcxNDQ0QDMyMzAyZTMzMmUzMFhjbTNwdnNTNGQ4TmlEV3A3SjZxSHNQaDhlSWlSNDBmRHBtZkJkSisvclk9");
 var builder = WebApplication.CreateBuilder(args);
@@ -25,8 +25,8 @@ builder.Services.AddScoped<IModifyData, ModifyData>();
 builder.Services.AddScoped<IReadData, ReadData>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IGenerateStatements, GenerateStatements>();
-builder.Services.AddScoped<IDownloadService,DownloadService>();
-builder.Host.UseSerilog((ctx,lc)=>
+builder.Services.AddScoped<IDownloadService, DownloadService>();
+builder.Host.UseSerilog((ctx, lc) =>
 lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
 
 

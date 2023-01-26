@@ -1,12 +1,11 @@
 ﻿using BankingApi.Filters;
 using BankingApi.Models;
 using BankingApi.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BankingApi.Controllers
 {
-   
+
     [ApiController]
     public class StatementsController : ControllerBase
     {
@@ -26,16 +25,16 @@ namespace BankingApi.Controllers
         public IActionResult GenerateWordStatement(StatementModel statementModel)
         {
             var wordStatement = _infoService.GetWordStatement(statementModel);
-            
+
             if (wordStatement is not null)
             {
-                return File(wordStatement, "word/doc","Statement.doc");
+                return File(wordStatement, "word/doc", "Statement.doc");
             }
-            else if(wordStatement is null)
+            else if (wordStatement is null)
             {
                 return StatusCode(500);
             }
-           
+
             return NotFound();
         }
 
@@ -49,17 +48,17 @@ namespace BankingApi.Controllers
         {
             var pdfStatement = _infoService.GetPdfStatement(statementModel);
 
-            if (pdfStatement is null)
+            if (pdfStatement is not null)
+            {
+                return File(pdfStatement, "application/pdf", "Statement.pdf");
+
+            }
+
+            else if (pdfStatement is null)
             {
                 return StatusCode(500);
             }
 
-            else if (pdfStatement is not null)
-            {
-                return File(pdfStatement, "application/pdf", "Statement.pdf");
-                
-            }
-            
             return NotFound();
         }
     }

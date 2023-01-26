@@ -3,7 +3,6 @@ using BankingApi.DTO;
 using BankingApi.src;
 using Microsoft.Extensions.Options;
 using System.Data.SqlClient;
-using System.Transactions;
 
 namespace BankingApi.DataAcces
 {
@@ -31,7 +30,7 @@ namespace BankingApi.DataAcces
             return accountData;
         }
 
-        public TransactionsDTO ReadAccountTransactions(string customerName,string status)
+        public TransactionsDTO ReadAccountTransactions(string customerName, string status)
         {
             TransactionsDTO? transactions = null;
             var customerNameList = new List<string>();
@@ -41,7 +40,7 @@ namespace BankingApi.DataAcces
             var recipientNameList = new List<string>();
             var transactionDateList = new List<string>();
             var _connection = new SqlConnection(_configModel.ConnectionString);
-            var transactionCommand = new SqlCommand(QuerryStrings.SelectAccountTransactions(customerName,status), _connection);
+            var transactionCommand = new SqlCommand(QuerryStrings.SelectAccountTransactions(customerName, status), _connection);
 
             _connection.Open();
             if (status == "Income")

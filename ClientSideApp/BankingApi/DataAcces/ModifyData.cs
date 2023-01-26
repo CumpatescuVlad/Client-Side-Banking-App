@@ -1,12 +1,9 @@
 ﻿using BankingApi.Config;
-using BankingApi.DTO;
 using BankingApi.Models;
 using BankingApi.src;
 using Microsoft.Extensions.Options;
-using System.Data;
 using System.Data.SqlClient;
 using System.Net;
-using System.Security.Cryptography.Xml;
 
 namespace BankingApi.DataAcces
 {
@@ -22,15 +19,15 @@ namespace BankingApi.DataAcces
             _logger = logger;
         }
 
-       
+
         public HttpStatusCode UpdateBallance(TransferModel transferModel)
         {
             var _connection = new SqlConnection(_configModel.ConnectionString);
             var updateSenderBallance = new SqlCommand(QuerryStrings.UpdateAccountBallance(transferModel.CustomerName, transferModel.Amount, "Sender"), _connection);
             var updateRecipientBallance = new SqlCommand(QuerryStrings.UpdateAccountBallance(transferModel.Recipient, transferModel.Amount, "Recipient"), _connection);
-            if (transferModel.TypeOfTransaction=="Bill Payment")
+            if (transferModel.TypeOfTransaction == "Bill Payment")
             {
-                updateRecipientBallance = new SqlCommand(QuerryStrings.UpdateAccountBallance(transferModel.Recipient,transferModel.Amount, "Bill Payment"),_connection);
+                updateRecipientBallance = new SqlCommand(QuerryStrings.UpdateAccountBallance(transferModel.Recipient, transferModel.Amount, "Bill Payment"), _connection);
             }
 
             try
@@ -65,10 +62,10 @@ namespace BankingApi.DataAcces
         }
 
 
-        public HttpStatusCode InsertTransaction(TransferModel transferModel)
+        public HttpStatusCode InsertTransaction(TransactionModel transactionModel)
         {
             var _connection = new SqlConnection(_configModel.ConnectionString);
-            var insertTransactionCommand = new SqlCommand(QuerryStrings.InsertTransaction(transferModel), _connection);
+            var insertTransactionCommand = new SqlCommand(QuerryStrings.InsertTransaction(transactionModel), _connection);
             try
             {
                 _connection.Open();

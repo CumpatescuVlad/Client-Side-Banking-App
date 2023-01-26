@@ -1,9 +1,9 @@
-﻿using Syncfusion.DocIO.DLS;
+﻿using BankingApi.Models;
 using Syncfusion.DocIO;
+using Syncfusion.DocIO.DLS;
+using Syncfusion.Drawing;
 using Syncfusion.Pdf;
 using Syncfusion.Pdf.Graphics;
-using BankingApi.Models;
-using Syncfusion.Drawing;
 using System.Net;
 
 namespace BankingApi.src
@@ -12,7 +12,7 @@ namespace BankingApi.src
     {
         private readonly Random random = new();
         private readonly ILogger<GenerateStatements> _logger;
-
+       
         public GenerateStatements(ILogger<GenerateStatements> logger)
         {
             _logger = logger;
@@ -56,9 +56,8 @@ namespace BankingApi.src
                 statement.Save(wordOutputFile, FormatType.Doc);
                 statement.Close();
                 wordOutputFile.Close();
-
                 wordOutputFile.Dispose();
-
+                statement.Dispose();
                 return HttpStatusCode.Created;
             }
             catch (Exception exception)
@@ -79,9 +78,9 @@ namespace BankingApi.src
             PdfGraphics graphic = page.Graphics;
             PdfBrush brush = new PdfSolidBrush(Color.Black);
             PdfFont normalFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 12);
-            var blodFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 14, PdfFontStyle.Bold);
+            var boldFont = new PdfStandardFont(PdfFontFamily.TimesRoman, 14, PdfFontStyle.Bold);
 
-            graphic.DrawString($"EXTRAS DE CONT NR.{random.Next(1, 10)} din data de  {DateTime.Now} \n\t\t\t\t\t\t\tpe perioada: {DateTime.UtcNow} - {DateTime.UtcNow.AddDays(3)}\n", blodFont, brush, new PointF(20, 20));
+            graphic.DrawString($"EXTRAS DE CONT NR.{random.Next(1, 10)} din data de  {DateTime.Now} \n\t\t\t\t\t\t\tpe perioada: {DateTime.UtcNow} - {DateTime.UtcNow.AddDays(3)}\n", boldFont, brush, new PointF(20, 20));
 
             graphic.DrawString(PdfStatementContent(statementModel, incomeTransactions, outcomeTransactions), normalFont, brush, new PointF(20, 20));
 
@@ -106,7 +105,6 @@ namespace BankingApi.src
             }
 
         }
-
         private static string PdfStatementContent(StatementModel statementModel, string incomeTransactions, string outcomeTransactions)
         {
             string content = "\n\n\n\n\n\n";

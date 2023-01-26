@@ -1,13 +1,11 @@
 ﻿using BankingApi.Filters;
 using BankingApi.Models;
 using BankingApi.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace BankingApi.Controllers
 {
-    
+
     [ApiController]
     public class FunctionsController : ControllerBase
     {
@@ -15,7 +13,7 @@ namespace BankingApi.Controllers
 
         public FunctionsController(IInfoService infoService)
         {
-            _infoService= infoService;
+            _infoService = infoService;
         }
 
         [HttpGet]
@@ -49,6 +47,6 @@ namespace BankingApi.Controllers
             return BadRequest();
         }
 
-        
+
     }
 }

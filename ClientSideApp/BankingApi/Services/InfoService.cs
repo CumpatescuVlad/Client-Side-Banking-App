@@ -28,9 +28,9 @@ namespace BankingApi.Services
             return JsonConvert.SerializeObject(_readData.ReadCompanyNames());
         }
 
-        public  byte[] GetWordStatement(StatementModel statementModel)
+        public byte[] GetWordStatement(StatementModel statementModel)
         {
-            if (_generateStatements.GenerateWordStatement(statementModel,_readData.ReadStatementTransactions(statementModel.CustomerName,"Income"), _readData.ReadStatementTransactions(statementModel.CustomerName, "Outcome")) is HttpStatusCode.Created)
+            if (_generateStatements.GenerateWordStatement(statementModel, _readData.ReadStatementTransactions(statementModel.CustomerName, "Income"), _readData.ReadStatementTransactions(statementModel.CustomerName, "Outcome")) is HttpStatusCode.Created)
             {
                 return _downloadService.DownloadWordStatement();
             }
@@ -38,7 +38,7 @@ namespace BankingApi.Services
             {
                 return null;
             }
-          
+
         }
 
         public byte[] GetPdfStatement(StatementModel statementModel)

@@ -27,7 +27,7 @@ namespace BankingApi.Controllers
 
             if (accountInfo is null)
             {
-                NotFound("Customer Name Could Not Be Found");
+                return NotFound("Customer Name Could Not Be Found");
             }
 
             return Ok(accountInfo);

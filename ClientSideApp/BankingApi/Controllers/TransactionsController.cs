@@ -17,7 +17,7 @@ namespace BankingApi.Controllers
 
         [HttpPost]
 
-        [Route("Account/Transfer")]
+        [Route("Account/NewTransfer")]
 
         [ServiceFilter(typeof(ModelValidation))]
 
@@ -44,10 +44,10 @@ namespace BankingApi.Controllers
 
         [ServiceFilter(typeof(ModelValidation))]
 
-        public IActionResult IncomeTransactions(string customerName, string accountIBAN)
+        public IActionResult IncomeTransactions(string customerName)
         {
             var incomeTransactions = _transactionService.GetIncomeTransactions(customerName);
-            
+
             if (incomeTransactions is null)
             {
                 return NotFound("No Transactions Were Found");
@@ -63,7 +63,7 @@ namespace BankingApi.Controllers
 
         [ServiceFilter(typeof(ModelValidation))]
 
-        public IActionResult OutcomeTransactions(string customerName, string accountIBAN)
+        public IActionResult OutcomeTransactions(string customerName)
         {
             var outcomeTransactions = _transactionService.GetOutcomeTransactions(customerName);
 

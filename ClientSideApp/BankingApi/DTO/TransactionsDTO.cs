@@ -12,7 +12,7 @@
             TransactionDate = transactionDate;
         }
 
-        public List<string>? CustomerFullName { get;private set; }
+        public List<string>? CustomerFullName { get; private set; }
 
         public List<string>? TypeOfTransaction { get; private set; }
 

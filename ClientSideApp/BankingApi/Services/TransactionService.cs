@@ -16,27 +16,27 @@ namespace BankingApi.Services
         }
         public HttpStatusCode NewTransfer(TransferModel transferModel)
         {
-            if (transferModel.Amount>transferModel.SenderBallance)
+            if (transferModel.Amount > transferModel.SenderBallance)
             {
                 return HttpStatusCode.BadRequest;
             }
-           
+
             return _dataAcces.UpdateBallance(transferModel);
         }
 
-        public HttpStatusCode RegisterTransaction(TransferModel transferModel)
+        public HttpStatusCode RegisterTransaction(TransactionModel transactionModel)
         {
-            return _dataAcces.InsertTransaction(transferModel);
+            return _dataAcces.InsertTransaction(transactionModel);
         }
 
         public string GetIncomeTransactions(string customerName)
         {
-            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName,"Income"));
+            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName, "Income"));
         }
 
         public string GetOutcomeTransactions(string customerName)
         {
-            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName,"Outcome"));
+            return JsonConvert.SerializeObject(_readData.ReadAccountTransactions(customerName, "Outcome"));
         }
 
     }

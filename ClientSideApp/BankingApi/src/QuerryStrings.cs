@@ -4,16 +4,17 @@ namespace BankingApi.src
 {
     public static class QuerryStrings
     {
+        public static string InsertTransaction(TransactionModel transactionModel) => $"Insert Into Transactions (CustomerFullName,TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate) Values ('{transactionModel.CustomerName}','{transactionModel.TypeOfTransaction}','{transactionModel.AccountIBAN}','{transactionModel.Amount}','{transactionModel.Recipient}','{DateTime.UtcNow}')";
         public static string SelectAccountData(string customerName) => $"Select CustomerFullName,AccountNumber,AccountIBAN,Ballance From Accounts Where CustomerFullName='{customerName}'";
         public static string SelectCompanies() => $"Select CompanyName,CompanyService,CompanyIBAN From Companies";
-        //public static string SelectAccountTransactions(string customerName, string accountIBAN) => $"Select TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate From Transactions Where CustomerFullName='{customerName}' AND AccountUsed='{accountIBAN}'";
-        public static string SelectAccountTransactions(string customerName,string status)
+        
+        public static string SelectAccountTransactions(string customerName, string status)
         {
             string querryString;
             if (status == "Income")
             {
                 querryString = $"Select CustomerFullName,TypeOfTransaction,AccountUsed,Amount,TransactionDate From Transactions Where Recipient='{customerName}'";
-    
+
             }
 
             else
@@ -23,6 +24,7 @@ namespace BankingApi.src
 
             return querryString;
         }
+
         public static string UpdateAccountBallance(string? customerName, int? ballance, string customerStatus)
         {
             string? updateQuerry;
@@ -31,7 +33,7 @@ namespace BankingApi.src
             {
                 updateQuerry = $"Update Accounts set Ballance = (Select Ballance From Accounts Where CustomerFullName='{customerName}')-'{ballance}' Where CustomerFullName='{customerName}'";
             }
-            else if(customerStatus == "Recipient")
+            else if (customerStatus == "Recipient")
             {
                 updateQuerry = $"Update Accounts set Ballance = (Select Ballance From Accounts Where CustomerFullName='{customerName}')+'{ballance}' Where CustomerFullName='{customerName}'";
             }
@@ -43,7 +45,7 @@ namespace BankingApi.src
             return updateQuerry;
         }
 
-        public static string InsertTransaction(TransferModel transferModel)=> $"Insert Into Transactions (CustomerFullName,TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate) Values ('{transferModel.CustomerName}','{transferModel.TypeOfTransaction}','{transferModel.AccountIBAN}','{transferModel.Amount}','{transferModel.Recipient}','{DateTime.UtcNow}')";
+        
 
 
     }

@@ -8,7 +8,7 @@
             CompanyService = companyService;
             CompanyIBAN = companyIBAN;
         }
-       
+
         public List<string>? CompanyName { get; private set; }
         public List<string>? CompanyService { get; private set; }
         public List<string>? CompanyIBAN { get; private set; }
