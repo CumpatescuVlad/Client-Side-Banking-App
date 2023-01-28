@@ -10,10 +10,12 @@ namespace BankingApi.Controllers
     public class FunctionsController : ControllerBase
     {
         private readonly IInfoService _infoService;
+        private readonly IOrderService _orderService;
 
-        public FunctionsController(IInfoService infoService)
+        public FunctionsController(IInfoService infoService,IOrderService orderService)
         {
             _infoService = infoService;
+            _orderService = orderService;
         }
 
         [HttpGet]
@@ -36,15 +38,21 @@ namespace BankingApi.Controllers
 
         [HttpPost]
 
-        [Route("Functions/BillPayment")]
+        [Route("Functions/Orders")]
 
         [ServiceFilter(typeof(ModelValidation))]
 
-        public IActionResult PayBill(TransferModel transferModel)
+        public IActionResult Orders(OrderModel orderModel)
         {
+            if (_orderService.CreateOrder(orderModel) is System.Net.HttpStatusCode.Created)
+            {
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
 
-
-            return BadRequest();
         }
 
 

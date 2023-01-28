@@ -7,5 +7,6 @@ namespace BankingApi.DataAcces
     {
         HttpStatusCode InsertTransaction(TransactionModel transactionModel);
         HttpStatusCode UpdateBallance(TransferModel transferModel);
+        HttpStatusCode InsertNewOrder(OrderModel orderModel,string transferModel);
     }
 }

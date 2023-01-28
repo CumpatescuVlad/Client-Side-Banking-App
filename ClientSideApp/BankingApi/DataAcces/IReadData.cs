@@ -8,5 +8,6 @@ namespace BankingApi.DataAcces
         TransactionsDTO ReadAccountTransactions(string customerName, string status);
         string ReadStatementTransactions(string customerName, string status);
         CompanyDTO ReadCompanyNames();
+        List<OrderDTO> ReadOrders();
     }
 }

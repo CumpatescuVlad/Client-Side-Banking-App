@@ -47,7 +47,7 @@ namespace BankingApi.DataAcces
                 senderAdapter.UpdateCommand.ExecuteNonQuery();
                 recipientAdapter.UpdateCommand.ExecuteNonQuery();
 
-                return HttpStatusCode.OK;
+                return HttpStatusCode.Created;
             }
             catch (Exception ex)
             {
@@ -91,6 +91,29 @@ namespace BankingApi.DataAcces
             {
                 _connection.Close();
             }
+
+        }
+
+        public HttpStatusCode InsertNewOrder(OrderModel orderModel,string transferModel)
+        {
+            var connection = new SqlConnection(_configModel.ConnectionString);
+            var insertNewOrderCommand = new SqlCommand(QuerryStrings.InsertOrder(orderModel,transferModel),connection);
+
+            try
+            {
+                connection.Open();
+                var adapter = new SqlDataAdapter() {InsertCommand=insertNewOrderCommand };
+                adapter.InsertCommand.ExecuteNonQuery();
+                return HttpStatusCode.Created;
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return HttpStatusCode.InternalServerError;
+               
+            }
+
 
         }
 

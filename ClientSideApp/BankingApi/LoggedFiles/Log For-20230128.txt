@@ -1,0 +1,63 @@
+2023-01-28 02:07:26.172 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-28 02:07:26.218 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-28 02:07:26.222 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-28 02:07:26.224 +02:00 [INF] Hosting environment: Development
+2023-01-28 02:07:26.225 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-28 02:08:04.782 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-28 02:08:04.819 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-28 02:08:04.821 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-28 02:08:04.822 +02:00 [INF] Hosting environment: Development
+2023-01-28 02:08:04.823 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-28 02:14:01.347 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-28 02:14:01.403 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-28 02:14:01.407 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-28 02:14:01.409 +02:00 [INF] Hosting environment: Development
+2023-01-28 02:14:01.410 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-28 02:20:58.059 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-28 02:20:58.096 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-28 02:20:58.098 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-28 02:20:58.100 +02:00 [INF] Hosting environment: Development
+2023-01-28 02:20:58.100 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-28 02:23:07.637 +02:00 [ERR] Incorrect syntax near ')'.
+2023-01-28 02:23:57.414 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-28 02:23:57.450 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-28 02:23:57.452 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-28 02:23:57.453 +02:00 [INF] Hosting environment: Development
+2023-01-28 02:23:57.454 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-28 02:27:55.255 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-28 02:27:55.290 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-28 02:27:55.292 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-28 02:27:55.293 +02:00 [INF] Hosting environment: Development
+2023-01-28 02:27:55.294 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-28 03:10:18.339 +02:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2023-01-28 03:10:18.383 +02:00 [INF] Quartz Scheduler created
+2023-01-28 03:10:18.386 +02:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2023-01-28 03:10:18.387 +02:00 [INF] RAMJobStore initialized.
+2023-01-28 03:10:18.388 +02:00 [INF] Quartz Scheduler 3.5.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2023-01-28 03:10:18.390 +02:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2023-01-28 03:10:18.391 +02:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2023-01-28 03:10:18.404 +02:00 [INF] Adding 1 jobs, 1 triggers.
+2023-01-28 03:10:18.407 +02:00 [INF] Adding job: DEFAULT.BallanceLogJob
+2023-01-28 03:10:18.641 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-28 03:10:18.643 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-28 03:10:18.644 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-28 03:10:18.646 +02:00 [INF] Hosting environment: Development
+2023-01-28 03:10:18.647 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-28 03:10:18.649 +02:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2023-01-28 03:12:48.308 +02:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2023-01-28 03:12:48.348 +02:00 [INF] Quartz Scheduler created
+2023-01-28 03:12:48.349 +02:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2023-01-28 03:12:48.350 +02:00 [INF] RAMJobStore initialized.
+2023-01-28 03:12:48.352 +02:00 [INF] Quartz Scheduler 3.5.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2023-01-28 03:12:48.353 +02:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2023-01-28 03:12:48.354 +02:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2023-01-28 03:12:48.364 +02:00 [INF] Adding 1 jobs, 1 triggers.
+2023-01-28 03:12:48.366 +02:00 [INF] Adding job: DEFAULT.BallanceLogJob
+2023-01-28 03:12:48.543 +02:00 [INF] Now listening on: https://localhost:7169
+2023-01-28 03:12:48.546 +02:00 [INF] Now listening on: http://localhost:5125
+2023-01-28 03:12:48.547 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-28 03:12:48.549 +02:00 [INF] Hosting environment: Development
+2023-01-28 03:12:48.550 +02:00 [INF] Content root path: E:\CODE REPOS\BankingApp\ClientSideApp\BankingApi
+2023-01-28 03:12:48.551 +02:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2023-01-28 03:13:15.055 +02:00 [INF] Job Started
+2023-01-28 03:14:15.014 +02:00 [INF] Job Started
