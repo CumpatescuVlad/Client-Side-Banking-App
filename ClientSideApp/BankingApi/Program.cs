@@ -1,14 +1,13 @@
 using BankingApi.Config;
 using BankingApi.DataAcces;
 using BankingApi.Filters;
+using BankingApi.Jobs;
 using BankingApi.Services;
 using BankingApi.src;
 using Microsoft.AspNetCore.Mvc;
+using Quartz;
 using Serilog;
 using Syncfusion.Licensing;
-using Quartz;
-using Quartz.Core;
-using BankingApi.Jobs;
 
 SyncfusionLicenseProvider.RegisterLicense("NzcxNDQ0QDMyMzAyZTMzMmUzMFhjbTNwdnNTNGQ4TmlEV3A3SjZxSHNQaDhlSWlSNDBmRHBtZkJkSisvclk9");
 var builder = WebApplication.CreateBuilder(args);
@@ -29,7 +28,7 @@ builder.Services.AddScoped<IReadData, ReadData>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IGenerateStatements, GenerateStatements>();
 builder.Services.AddScoped<IDownloadService, DownloadService>();
-builder.Services.AddScoped<IOrderService,OrderService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Host.UseSerilog((ctx, lc) =>
 lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
 builder.Services.AddQuartz(quartz =>

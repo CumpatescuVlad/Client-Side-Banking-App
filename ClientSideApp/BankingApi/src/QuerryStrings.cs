@@ -5,11 +5,11 @@ namespace BankingApi.src
     public static class QuerryStrings
     {
         public static string InsertTransaction(TransactionModel transactionModel) => $"Insert Into Transactions (CustomerFullName,TypeOfTransaction,AccountUsed,Amount,Recipient,TransactionDate) Values ('{transactionModel.CustomerName}','{transactionModel.TypeOfTransaction}','{transactionModel.AccountIBAN}','{transactionModel.Amount}','{transactionModel.Recipient}','{DateTime.UtcNow}')";
-        public static string InsertOrder(OrderModel orderModel,string transferModel) => $"Insert Into Orders (CustomerFullName,TypeOfOrder,StartingDate,EndingDate,TransferModel) Values ('{orderModel.CustomerName}','{orderModel.TypeOfOrder}','{orderModel.StartingDate}','{orderModel.EndingDate}','{transferModel}')";
+        public static string InsertOrder(OrderModel orderModel, string transferModel) => $"Insert Into Orders (CustomerFullName,TypeOfOrder,AmountToRemain,StartingDate,EndingDate,TransferModel) Values ('{orderModel.CustomerName}','{orderModel.TypeOfOrder}','{orderModel.AmountToRemain}','{orderModel.StartingDate}','{orderModel.EndingDate}','{transferModel}')";
         public static string SelectAccountData(string customerName) => $"Select CustomerFullName,AccountNumber,AccountIBAN,Ballance From Accounts Where CustomerFullName='{customerName}'";
         public static string SelectCompanies() => "Select CompanyName,CompanyService,CompanyIBAN From Companies";
-        public static string SelectOrders() => "Select CustomerFullName,TypeOfOrder,StartingDate,EndingDate,TransferModel From Orders";
-        
+        public static string SelectOrders() => "Select CustomerFullName,TypeOfOrder,AmountToRemain,StartingDate,EndingDate,TransferModel From Orders";
+
         public static string SelectAccountTransactions(string customerName, string status)
         {
             string querryString;
@@ -47,7 +47,7 @@ namespace BankingApi.src
             return updateQuerry;
         }
 
-        
+
 
 
     }

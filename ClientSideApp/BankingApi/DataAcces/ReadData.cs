@@ -11,7 +11,7 @@ namespace BankingApi.DataAcces
         private readonly ConfigurationModel _configModel;
         private readonly ILogger<ReadData> _logger;
 
-        public ReadData(IOptions<ConfigurationModel> configModel,ILogger<ReadData> logger)
+        public ReadData(IOptions<ConfigurationModel> configModel, ILogger<ReadData> logger)
         {
             _configModel = configModel.Value;
             _logger = logger;
@@ -151,9 +151,9 @@ namespace BankingApi.DataAcces
         public List<OrderDTO> ReadOrders()
         {
             var connection = new SqlConnection(_configModel.ConnectionString);
-            var readOrdersCommand = new SqlCommand(QuerryStrings.SelectOrders(),connection);
+            var readOrdersCommand = new SqlCommand(QuerryStrings.SelectOrders(), connection);
             var ordersList = new List<OrderDTO>();
-           
+
             try
             {
                 connection.Open();
@@ -161,12 +161,12 @@ namespace BankingApi.DataAcces
 
                 while (reader.Read())
                 {
-                    ordersList.Add(new OrderDTO(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4)));
+                    ordersList.Add(new OrderDTO(reader.GetString(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetString(5)));
 
                 }
 
                 return ordersList;
-                
+
             }
             catch (Exception ex)
             {

@@ -2,10 +2,10 @@
 
 namespace BankingApi.Models
 {
-    public class OrderModel:TransferModel
+    public class OrderModel : TransferModel
     {
         [Required(ErrorMessage = "You need to specify a remaning amount.")]
-        public int? AmountToRemainInAccount { get; set; }
+        public int? AmountToRemain { get; set; }
 
         [Required(ErrorMessage = "Type of order must be standing or sweeping.")]
         public string? TypeOfOrder { get; set; }

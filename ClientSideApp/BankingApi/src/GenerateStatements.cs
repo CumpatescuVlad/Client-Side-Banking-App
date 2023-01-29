@@ -12,7 +12,7 @@ namespace BankingApi.src
     {
         private readonly Random random = new();
         private readonly ILogger<GenerateStatements> _logger;
-       
+
         public GenerateStatements(ILogger<GenerateStatements> logger)
         {
             _logger = logger;

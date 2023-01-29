@@ -12,7 +12,7 @@ namespace BankingApi.Controllers
         private readonly IInfoService _infoService;
         private readonly IOrderService _orderService;
 
-        public FunctionsController(IInfoService infoService,IOrderService orderService)
+        public FunctionsController(IInfoService infoService, IOrderService orderService)
         {
             _infoService = infoService;
             _orderService = orderService;
@@ -42,7 +42,7 @@ namespace BankingApi.Controllers
 
         [ServiceFilter(typeof(ModelValidation))]
 
-        public IActionResult Orders(OrderModel orderModel)
+        public IActionResult CreateOrder(OrderModel orderModel)
         {
             if (_orderService.CreateOrder(orderModel) is System.Net.HttpStatusCode.Created)
             {
@@ -50,7 +50,7 @@ namespace BankingApi.Controllers
             }
             else
             {
-                return NotFound();
+                return BadRequest();
             }
 
         }

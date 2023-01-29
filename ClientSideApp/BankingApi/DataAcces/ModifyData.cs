@@ -94,15 +94,15 @@ namespace BankingApi.DataAcces
 
         }
 
-        public HttpStatusCode InsertNewOrder(OrderModel orderModel,string transferModel)
+        public HttpStatusCode InsertNewOrder(OrderModel orderModel, string transferModel)
         {
             var connection = new SqlConnection(_configModel.ConnectionString);
-            var insertNewOrderCommand = new SqlCommand(QuerryStrings.InsertOrder(orderModel,transferModel),connection);
+            var insertNewOrderCommand = new SqlCommand(QuerryStrings.InsertOrder(orderModel, transferModel), connection);
 
             try
             {
                 connection.Open();
-                var adapter = new SqlDataAdapter() {InsertCommand=insertNewOrderCommand };
+                var adapter = new SqlDataAdapter() { InsertCommand = insertNewOrderCommand };
                 adapter.InsertCommand.ExecuteNonQuery();
                 return HttpStatusCode.Created;
 
@@ -111,7 +111,7 @@ namespace BankingApi.DataAcces
             {
                 _logger.LogError(ex.Message);
                 return HttpStatusCode.InternalServerError;
-               
+
             }
 
 
